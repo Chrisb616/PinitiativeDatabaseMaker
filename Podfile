@@ -1,9 +1,9 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'LemonHandshakeDatabaseMaker' do
+target 'LemonHandshakeDatabase' do
 
 pod 'Firebase'
-pod 'FirebaseDatabase'
+pod 'Firebase/Auth'
 
 end
