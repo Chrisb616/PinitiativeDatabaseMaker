@@ -1,2 +1,5 @@
-# lemonHandshakeDatabaseMaker
-A long term solution for a short term problem.
+# Lemon Handshake Database Maker
+
+A companion for the Flatiron team Lemon Handshake's 
+
+
