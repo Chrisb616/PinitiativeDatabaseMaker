@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */; };
+		1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */; };
 		1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AD1DDD059A0060292D /* AppDelegate.swift */; };
 		1B4517B01DDD059A0060292D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AF1DDD059A0060292D /* ViewController.swift */; };
 		1B4517B31DDD059A0060292D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B11DDD059A0060292D /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
+		1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B4517AA1DDD059A0060292D /* LemonHandshakeDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonHandshakeDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4517AD1DDD059A0060292D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B4517AF1DDD059A0060292D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +67,12 @@
 			children = (
 				1B4517AD1DDD059A0060292D /* AppDelegate.swift */,
 				1B4517AF1DDD059A0060292D /* ViewController.swift */,
+				1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */,
 				1B4517B11DDD059A0060292D /* Main.storyboard */,
 				1B4517B41DDD059A0060292D /* Assets.xcassets */,
 				1B4517B61DDD059A0060292D /* LaunchScreen.storyboard */,
 				1B4517B91DDD059A0060292D /* Info.plist */,
+				1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */,
 			);
 			path = LemonHandshakeDatabase;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B4517B81DDD059A0060292D /* LaunchScreen.storyboard in Resources */,
+				1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */,
 				1B4517B51DDD059A0060292D /* Assets.xcassets in Resources */,
 				1B4517B31DDD059A0060292D /* Main.storyboard in Resources */,
 			);
@@ -213,6 +220,7 @@
 			files = (
 				1B4517B01DDD059A0060292D /* ViewController.swift in Sources */,
 				1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */,
+				1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
