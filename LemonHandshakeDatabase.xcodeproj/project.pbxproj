@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0A37851DDE4B4B00E095D6 /* SodaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */; };
+		1B0A37861DDE4B4B00E095D6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37821DDE4B4B00E095D6 /* Secrets.swift */; };
+		1B0A37871DDE4B4B00E095D6 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37831DDE4B4B00E095D6 /* Marker.swift */; };
+		1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37841DDE4B4B00E095D6 /* DataStore.swift */; };
 		1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */; };
 		1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */; };
 		1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AD1DDD059A0060292D /* AppDelegate.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SodaAPIClient.swift; sourceTree = "<group>"; };
+		1B0A37821DDE4B4B00E095D6 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		1B0A37831DDE4B4B00E095D6 /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		1B0A37841DDE4B4B00E095D6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
 		1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B4517AA1DDD059A0060292D /* LemonHandshakeDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonHandshakeDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +73,10 @@
 		1B4517AC1DDD059A0060292D /* LemonHandshakeDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */,
+				1B0A37821DDE4B4B00E095D6 /* Secrets.swift */,
+				1B0A37831DDE4B4B00E095D6 /* Marker.swift */,
+				1B0A37841DDE4B4B00E095D6 /* DataStore.swift */,
 				1B4517AD1DDD059A0060292D /* AppDelegate.swift */,
 				1B4517AF1DDD059A0060292D /* ViewController.swift */,
 				1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */,
@@ -218,9 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */,
 				1B4517B01DDD059A0060292D /* ViewController.swift in Sources */,
+				1B0A37861DDE4B4B00E095D6 /* Secrets.swift in Sources */,
 				1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */,
+				1B0A37851DDE4B4B00E095D6 /* SodaAPIClient.swift in Sources */,
 				1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */,
+				1B0A37871DDE4B4B00E095D6 /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

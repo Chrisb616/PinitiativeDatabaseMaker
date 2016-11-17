@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class FirebaseInteractor {
     
@@ -15,14 +17,36 @@ class FirebaseInteractor {
     private init() {}
     
     let ref = FIRDatabase.database().reference()
-    
+}
+
+//MARK: - Auth {
+extension FirebaseInteractor {
+    func authorize() {
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("\(user?.displayName) signed in!")
+            }
+        })
+    }
 }
 
 //MARK: - Landmark
 extension FirebaseInteractor {
     func serializeLandmarks() -> [String:Any] {
         return ["Test":"Any"]
+        
     }
     
-    func
+    func storeLandmark(landmark: [String:Any]) {
+        
+        let landmarkRef = ref.child("landmarks")
+        
+        
+        let key = landmarkRef.childByAutoId().key
+        let databaseItem = [key:landmark]
+        landmarkRef.updateChildValues(databaseItem)
+    }
+    
 }

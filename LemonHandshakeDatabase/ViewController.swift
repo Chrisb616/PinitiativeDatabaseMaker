@@ -9,9 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let firebaseInteractor = FirebaseInteractor.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        firebaseInteractor.authorize()
+        firebaseInteractor.storeLandmark(landmark: ["Testing":123])
     }
 
     override func didReceiveMemoryWarning() {
