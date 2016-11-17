@@ -43,7 +43,7 @@ extension FirebaseInteractor {
         
         let landmarkRef = ref.child("landmarks")
         let key = landmarkRef.childByAutoId().key
-        let databaseItem = [key:landmark]
+        let databaseItem = [key:landmark.serialized]
         landmarkRef.updateChildValues(databaseItem)
     }
     

@@ -47,7 +47,6 @@ extension schoolMarker {
 class parkMarker: Marker {
     
     var name: String
-    //var acres: Double?
     var address: String?
     let acresString: String?
     var icon: String {
@@ -59,7 +58,6 @@ class parkMarker: Marker {
         self.address = dictionary["address"] as? String
         
         self.acresString = dictionary["acres"] as? String
-        //self.acres = Double(acresString!)
     }
 }
 extension parkMarker {
@@ -69,6 +67,7 @@ extension parkMarker {
         serialData["name"] = name
         serialData["acres"] = acresString
         serialData["address"] = address
+        serialData["type"] = "park"
         
         return serialData
     }
@@ -101,6 +100,7 @@ extension hospitalMarker {
         serialData["name"] = name
         serialData["latitude"] = latitude
         serialData["longitude"] = longitude
+        serialData["type"] = "hospital"
         
         return serialData
     }

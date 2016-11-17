@@ -10,15 +10,21 @@ import Foundation
 
 class DataStore {
     
-    var locationMarkersArray = [Marker]()
+    //var locationMarkersArray = [Marker]()
+    var hospitals = [hospitalMarker]()
+    var parks = [parkMarker]()
+    var schools = [schoolMarker]()
+    let firebaseInteractor = FirebaseInteractor.shared
     
     static let sharedInstance = DataStore()
     
     private init(){}
     
-    func getMarkersFromAPI(_ completion: @escaping () -> Void){
+    func getMarkersFromAPI(_ completion: @escaping ([Marker]) -> Void){
         
-        self.locationMarkersArray = []
+        self.hospitals = []
+        self.parks = []
+        self.schools = []
         
         SodaAPIClient.getSchoolInfo(completion: { (arrayOfDictionaries) in
             
@@ -26,7 +32,7 @@ class DataStore {
                 
                 let newMarker = schoolMarker.init(dictionary: marker)
                 
-                self.locationMarkersArray.append(newMarker)
+                self.schools.append(newMarker)
                 
 //                print(newMarker.name)
 //                
@@ -39,7 +45,7 @@ class DataStore {
 //                print ("\n")
                 
             }
-            completion()
+            completion(self.schools)
         })
         
         
@@ -49,7 +55,7 @@ class DataStore {
                 
                 let newMarker = parkMarker.init(dictionary: marker)
                 
-                self.locationMarkersArray.append(newMarker)
+                self.parks.append(newMarker)
                 
 //                print(newMarker.name)
 //                
@@ -67,7 +73,7 @@ class DataStore {
                 
                 
             }
-            completion()
+            completion(self.parks)
         })
         
         
@@ -77,7 +83,7 @@ class DataStore {
                 
                 let newMarker = hospitalMarker.init(dictionary: marker)
                 
-                self.locationMarkersArray.append(newMarker)
+                self.hospitals.append(newMarker)
                 
 //                print(newMarker.name)
 //                
@@ -98,11 +104,15 @@ class DataStore {
                 
                 
             }
-            completion()
+            completion(self.hospitals)
         })
     }
     
-    
+    func sendMarkersToFirebase(landmarks: [Marker]) {
+        for marker in landmarks {
+            firebaseInteractor.storeLandmark(landmark: marker)
+        }
+    }
     
 }
 
