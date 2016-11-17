@@ -10,6 +10,8 @@ import Foundation
 
 protocol Marker {
     var name: String {get}
+    
+    var serialized: [String:String] { get }
 }
 
 class schoolMarker: Marker {
@@ -27,14 +29,27 @@ class schoolMarker: Marker {
         self.address = dictionary["primary_address"] as? String
     }
 }
+extension schoolMarker {
+    var serialized: [String:String] {
+        var serialData = [String:String]()
+        
+        serialData["name"] = name
+        serialData["grades"] = grades
+        serialData["address"] = address
+        serialData["type"] = "school"
+        
+        return serialData
+    }
+}
 
 
 
 class parkMarker: Marker {
     
     var name: String
-    var acres: Double?
+    //var acres: Double?
     var address: String?
+    let acresString: String?
     var icon: String {
         return "standard"
     }
@@ -43,18 +58,28 @@ class parkMarker: Marker {
         self.name = dictionary["signname"] as! String
         self.address = dictionary["address"] as? String
         
-        let acresString = dictionary["acres"] as? String
-            self.acres = Double(acresString!)
+        self.acresString = dictionary["acres"] as? String
+        //self.acres = Double(acresString!)
     }
 }
-
+extension parkMarker {
+    var serialized: [String : String] {
+        var serialData = [String: String]()
+        
+        serialData["name"] = name
+        serialData["acres"] = acresString
+        serialData["address"] = address
+        
+        return serialData
+    }
+}
 
 
 class hospitalMarker: Marker {
     
     var name: String
-    var latitude: Double?
-    var longitude: Double?
+    var latitude: String?
+    var longitude: String?
     var hospitalType: String?
     var icon: String {
         return "standard"
@@ -65,7 +90,18 @@ class hospitalMarker: Marker {
         self.hospitalType = dictionary["facility_type"] as? String
         
         let location = dictionary["location_1"] as! [String: Any]
-            self.latitude = Double((location["latitude"] as? String)!)
-            self.longitude = Double((location["longitude"] as? String)!)
+        self.latitude = location["latitude"] as? String
+        self.longitude = location["longitude"] as? String
+    }
+}
+extension hospitalMarker {
+    var serialized: [String : String] {
+        var serialData = [String: String]()
+        
+        serialData["name"] = name
+        serialData["latitude"] = latitude
+        serialData["longitude"] = longitude
+        
+        return serialData
     }
 }

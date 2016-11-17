@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         firebaseInteractor.authorize()
-        firebaseInteractor.storeLandmark(landmark: ["Testing":123])
     }
 
     override func didReceiveMemoryWarning() {

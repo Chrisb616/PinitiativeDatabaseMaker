@@ -39,11 +39,9 @@ extension FirebaseInteractor {
         
     }
     
-    func storeLandmark(landmark: [String:Any]) {
+    func storeLandmark(landmark: Marker) {
         
         let landmarkRef = ref.child("landmarks")
-        
-        
         let key = landmarkRef.childByAutoId().key
         let databaseItem = [key:landmark]
         landmarkRef.updateChildValues(databaseItem)
