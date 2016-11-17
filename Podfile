@@ -5,5 +5,6 @@ target 'LemonHandshakeDatabase' do
 
 pod 'Firebase'
 pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 end

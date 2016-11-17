@@ -11,6 +11,18 @@ import FirebaseDatabase
 
 class FirebaseInteractor {
     
+    static let shared = FirebaseInteractor()
+    private init() {}
+    
     let ref = FIRDatabase.database().reference()
     
+}
+
+//MARK: - Landmark
+extension FirebaseInteractor {
+    func serializeLandmarks() -> [String:Any] {
+        return ["Test":"Any"]
+    }
+    
+    func
 }
