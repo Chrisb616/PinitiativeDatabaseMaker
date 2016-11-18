@@ -11,6 +11,7 @@
 		1B0A37861DDE4B4B00E095D6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37821DDE4B4B00E095D6 /* Secrets.swift */; };
 		1B0A37871DDE4B4B00E095D6 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37831DDE4B4B00E095D6 /* Marker.swift */; };
 		1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37841DDE4B4B00E095D6 /* DataStore.swift */; };
+		1B0BBE061DDF567C0018E274 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B0BBE051DDF567C0018E274 /* GoogleService-Info.plist */; };
 		1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */; };
 		1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */; };
 		1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AD1DDD059A0060292D /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		1B0A37821DDE4B4B00E095D6 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		1B0A37831DDE4B4B00E095D6 /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		1B0A37841DDE4B4B00E095D6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		1B0BBE051DDF567C0018E274 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
 		1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B4517AA1DDD059A0060292D /* LemonHandshakeDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonHandshakeDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 		1B4517AC1DDD059A0060292D /* LemonHandshakeDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BBE051DDF567C0018E274 /* GoogleService-Info.plist */,
 				1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */,
 				1B0A37821DDE4B4B00E095D6 /* Secrets.swift */,
 				1B0A37831DDE4B4B00E095D6 /* Marker.swift */,
@@ -170,6 +173,7 @@
 			files = (
 				1B4517B81DDD059A0060292D /* LaunchScreen.storyboard in Resources */,
 				1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */,
+				1B0BBE061DDF567C0018E274 /* GoogleService-Info.plist in Resources */,
 				1B4517B51DDD059A0060292D /* Assets.xcassets in Resources */,
 				1B4517B31DDD059A0060292D /* Main.storyboard in Resources */,
 			);
