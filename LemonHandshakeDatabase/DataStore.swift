@@ -10,17 +10,17 @@ import Foundation
 
 class DataStore {
     
-    //var locationMarkersArray = [Marker]()
-    var hospitals = [hospitalMarker]()
-    var parks = [parkMarker]()
-    var schools = [schoolMarker]()
+    //var locationMarkersArray = [Landmark]()
+    var hospitals = [Hospital]()
+    var parks = [Park]()
+    var schools = [School]()
     let firebaseInteractor = FirebaseInteractor.shared
     
     static let sharedInstance = DataStore()
     
     private init(){}
     
-    func getMarkersFromAPI(_ completion: @escaping ([Marker]) -> Void){
+    func getMarkersFromAPI(_ completion: @escaping ([Landmark]) -> Void){
         
         self.hospitals = []
         self.parks = []
@@ -30,7 +30,7 @@ class DataStore {
             
             for marker in arrayOfDictionaries {
                 
-                let newMarker = schoolMarker.init(dictionary: marker)
+                let newMarker = School.init(dictionary: marker)
                 
                 self.schools.append(newMarker)
                 
@@ -53,7 +53,7 @@ class DataStore {
             
             for marker in arrayOfDictionaries {
                 
-                let newMarker = parkMarker.init(dictionary: marker)
+                let newMarker = Park.init(dictionary: marker)
                 
                 self.parks.append(newMarker)
                 
@@ -81,7 +81,7 @@ class DataStore {
             
             for marker in arrayOfDictionaries {
                 
-                let newMarker = hospitalMarker.init(dictionary: marker)
+                let newMarker = Hospital.init(dictionary: marker)
                 
                 self.hospitals.append(newMarker)
                 
@@ -108,7 +108,7 @@ class DataStore {
         })
     }
     
-    func sendMarkersToFirebase(landmarks: [Marker]) {
+    func sendMarkersToFirebase(landmarks: [Landmark]) {
         for marker in landmarks {
             firebaseInteractor.storeLandmark(landmark: marker)
         }

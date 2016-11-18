@@ -39,7 +39,7 @@ extension FirebaseInteractor {
         
     }
     
-    func storeLandmark(landmark: Marker) {
+    func storeLandmark(landmark: Landmark) {
         
         let landmarkRef = ref.child("landmarks")
         let key = landmarkRef.childByAutoId().key

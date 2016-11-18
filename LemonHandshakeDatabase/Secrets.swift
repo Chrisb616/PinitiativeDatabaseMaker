@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 let baseURL: String = "https://data.cityofnewyork.us/resource/"
 let schoolsCode: String = "bmsx-3qwd.json"
 let parksCode: String = "p7jc-c8ak.json"

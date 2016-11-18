@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         print("View Did load")
         firebaseInteractor.authorize()
         store.getMarkersFromAPI { (landmarks) in
-            self.store.sendMarkersToFirebase(landmarks: landmarks)
+            //LocationManager
+            //self.store.sendMarkersToFirebase(landmarks: landmarks)
         }
         print("View Did load completed")
     }
