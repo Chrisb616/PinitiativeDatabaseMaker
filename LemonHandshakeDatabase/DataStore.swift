@@ -10,7 +10,19 @@ import Foundation
 
 class DataStore {
     
-    //var locationMarkersArray = [Landmark]()
+    var landmarks: [Landmark] {
+        var landmarks = [Landmark]()
+        for landmark in hospitals {
+            landmarks.append(landmark)
+        }
+        for landmark in parks {
+            landmarks.append(landmark)
+        }
+        for landmark in hospitals {
+            landmarks.append(landmark)
+        }
+        return landmarks
+    }
     var hospitals = [Hospital]()
     var parks = [Park]()
     var schools = [School]()
@@ -34,16 +46,6 @@ class DataStore {
                 
                 self.schools.append(newMarker)
                 
-//                print(newMarker.name)
-//                
-//                if let testAddress = newMarker.address {
-//                    print(testAddress)
-//                }
-//                if let testGrades = newMarker.grades {
-//                    print(testGrades)
-//                }
-//                print ("\n")
-                
             }
             completion(self.schools)
         })
@@ -56,20 +58,6 @@ class DataStore {
                 let newMarker = Park.init(dictionary: marker)
                 
                 self.parks.append(newMarker)
-                
-//                print(newMarker.name)
-//                
-//                if let testAddress = newMarker.address {
-//                    print(testAddress)
-//                } else {
-//                    print("No Address Found")
-//                }
-//                if let testAcres = newMarker.acres {
-//                    print(testAcres)
-//                } else {
-//                    print("No Acerage Found")
-//                }
-//                print ("\n")
                 
                 
             }
@@ -85,34 +73,12 @@ class DataStore {
                 
                 self.hospitals.append(newMarker)
                 
-//                print(newMarker.name)
-//                
-//                if let testtype = newMarker.hospitalType {
-//                    print(testtype)
-//                }
-//                if let testLat = newMarker.latitude {
-//                    print(testLat)
-//                } else {
-//                    print("No Latitude Found")
-//                }
-//                if let testLong = newMarker.longitude {
-//                    print(testLong)
-//                } else {
-//                    print("No Longitude Found")
-//                }
-//                print ("\n")
-                
                 
             }
             completion(self.hospitals)
         })
     }
     
-    func sendMarkersToFirebase(landmarks: [Landmark]) {
-        for marker in landmarks {
-            firebaseInteractor.storeLandmark(landmark: marker)
-        }
-    }
     
 }
 

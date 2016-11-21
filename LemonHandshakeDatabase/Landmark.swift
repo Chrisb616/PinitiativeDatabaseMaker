@@ -11,6 +11,8 @@ import Foundation
 protocol Landmark {
     var name: String {get}
     var serialized: [String:String] { get }
+    var latitude: String? { get set }
+    var longitude: String? { get set }
 }
 
 class School: Landmark {
@@ -24,7 +26,11 @@ class School: Landmark {
     init(dictionary: [String : Any]){
         self.name = dictionary["location_name"] as! String
         self.grades = dictionary["grades_final"] as? String
-        self.address = dictionary["primary_address"] as? String
+        if let address = dictionary["primary_address"] as? String {
+            self.address = address + ", New York, NY"
+        } else {
+            self.address = nil
+        }
     }
 }
 extension School {
@@ -47,13 +53,20 @@ extension School {
 class Park: Landmark {
     
     let name: String
-    let address: String?
+    var address: String?
     let acres: String?
+    var latitude: String?
+    var longitude: String?
     
     init(dictionary: [String : Any]){
         self.name = dictionary["signname"] as! String
         self.address = dictionary["address"] as? String
         self.acres = dictionary["acres"] as? String
+        if let address = dictionary["address"] as? String {
+            self.address = address + ", New York, NY"
+        } else {
+            self.address = nil
+        }
     }
 }
 extension Park {
@@ -64,6 +77,8 @@ extension Park {
         serialData["acres"] = acres
         serialData["address"] = address
         serialData["type"] = "park"
+        serialData["latitude"] = latitude
+        serialData["longitude"] = longitude
         
         return serialData
     }
@@ -73,8 +88,8 @@ extension Park {
 class Hospital: Landmark {
     
     let name: String
-    let latitude: String?
-    let longitude: String?
+    var latitude: String?
+    var longitude: String?
     let hospitalType: String?
     
     init(dictionary: [String : Any]){
