@@ -21,10 +21,11 @@
 		1B4517B31DDD059A0060292D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B11DDD059A0060292D /* Main.storyboard */; };
 		1B4517B51DDD059A0060292D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B41DDD059A0060292D /* Assets.xcassets */; };
 		1B4517B81DDD059A0060292D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B61DDD059A0060292D /* LaunchScreen.storyboard */; };
-		E7C55A7314830C0165BC8972 /* Pods_LemonHandshakeDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375BE163111FF373B144C3A7 /* Pods_LemonHandshakeDatabase.framework */; };
+		2A39F04060EB60802B29BB1B /* Pods_LemonHandshakeDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE646C94E904F805154D8F /* Pods_LemonHandshakeDatabase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DFE646C94E904F805154D8F /* Pods_LemonHandshakeDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemonHandshakeDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SodaAPIClient.swift; sourceTree = "<group>"; };
 		1B0A37821DDE4B4B00E095D6 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		1B0A37831DDE4B4B00E095D6 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
@@ -41,9 +42,8 @@
 		1B4517B41DDD059A0060292D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B4517B71DDD059A0060292D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4517B91DDD059A0060292D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		375BE163111FF373B144C3A7 /* Pods_LemonHandshakeDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemonHandshakeDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7843D55A3A78BD97F64D813D /* Pods-LemonHandshakeDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.release.xcconfig"; sourceTree = "<group>"; };
-		927A70EE51AAE5A2B98300C8 /* Pods-LemonHandshakeDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		607E0425952358F31C313F27 /* Pods-LemonHandshakeDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.release.xcconfig"; sourceTree = "<group>"; };
+		B8635ADD3103AAA3C8F4102A /* Pods-LemonHandshakeDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C55A7314830C0165BC8972 /* Pods_LemonHandshakeDatabase.framework in Frameworks */,
+				2A39F04060EB60802B29BB1B /* Pods_LemonHandshakeDatabase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +73,8 @@
 			children = (
 				1B4517AC1DDD059A0060292D /* LemonHandshakeDatabase */,
 				1B4517AB1DDD059A0060292D /* Products */,
-				DF47176109A74DBBFCC92CA1 /* Pods */,
-				32452CD45FAE68ED93C742C6 /* Frameworks */,
+				96D85487D1B40D4CEBA346F2 /* Pods */,
+				DCAB13C26F0936EF8C7F8D23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,21 +106,21 @@
 			path = LemonHandshakeDatabase;
 			sourceTree = "<group>";
 		};
-		32452CD45FAE68ED93C742C6 /* Frameworks */ = {
+		96D85487D1B40D4CEBA346F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				375BE163111FF373B144C3A7 /* Pods_LemonHandshakeDatabase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DF47176109A74DBBFCC92CA1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				927A70EE51AAE5A2B98300C8 /* Pods-LemonHandshakeDatabase.debug.xcconfig */,
-				7843D55A3A78BD97F64D813D /* Pods-LemonHandshakeDatabase.release.xcconfig */,
+				B8635ADD3103AAA3C8F4102A /* Pods-LemonHandshakeDatabase.debug.xcconfig */,
+				607E0425952358F31C313F27 /* Pods-LemonHandshakeDatabase.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCAB13C26F0936EF8C7F8D23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DFE646C94E904F805154D8F /* Pods_LemonHandshakeDatabase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,12 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B4517BC1DDD059A0060292D /* Build configuration list for PBXNativeTarget "LemonHandshakeDatabase" */;
 			buildPhases = (
-				84756EADDD5D118DB9ED001E /* [CP] Check Pods Manifest.lock */,
+				9F4BBDE586AF0946D906AADA /* [CP] Check Pods Manifest.lock */,
 				1B4517A61DDD059A0060292D /* Sources */,
 				1B4517A71DDD059A0060292D /* Frameworks */,
 				1B4517A81DDD059A0060292D /* Resources */,
-				051F6FE78F5EB5461BCCD195 /* [CP] Embed Pods Frameworks */,
-				BF735923A781DB48E9CE2FD4 /* [CP] Copy Pods Resources */,
+				72FF14E68304F08496C6C3E2 /* [CP] Embed Pods Frameworks */,
+				1C170F45A588FEE1A00A8C69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,7 +195,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		051F6FE78F5EB5461BCCD195 /* [CP] Embed Pods Frameworks */ = {
+		1C170F45A588FEE1A00A8C69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72FF14E68304F08496C6C3E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,7 +225,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84756EADDD5D118DB9ED001E /* [CP] Check Pods Manifest.lock */ = {
+		9F4BBDE586AF0946D906AADA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -223,21 +238,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BF735923A781DB48E9CE2FD4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -377,7 +377,7 @@
 		};
 		1B4517BD1DDD059A0060292D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 927A70EE51AAE5A2B98300C8 /* Pods-LemonHandshakeDatabase.debug.xcconfig */;
+			baseConfigurationReference = B8635ADD3103AAA3C8F4102A /* Pods-LemonHandshakeDatabase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LemonHandshakeDatabase/Info.plist;
@@ -390,7 +390,7 @@
 		};
 		1B4517BE1DDD059A0060292D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7843D55A3A78BD97F64D813D /* Pods-LemonHandshakeDatabase.release.xcconfig */;
+			baseConfigurationReference = 607E0425952358F31C313F27 /* Pods-LemonHandshakeDatabase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LemonHandshakeDatabase/Info.plist;
