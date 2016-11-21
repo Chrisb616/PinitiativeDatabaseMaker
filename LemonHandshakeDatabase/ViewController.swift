@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     let showInfoButton = UIButton()
     let fireButton = UIButton()
+    
+    var tappedBefore = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class ViewController: UIViewController {
         
         firebaseInteractor.authorize()
         store.getMarkersFromAPI { (landmarks) in
-            LocationManager.setCoordinates(index: 0, landmarks: landmarks)
+            print("API Call finished")
         }
         print("View Did load completed")
     }
@@ -45,6 +47,10 @@ class ViewController: UIViewController {
     }
 
     func infoButtonTapped() {
+        if !tappedBefore {
+            tappedBefore = true
+            LocationManager.setCoordinates(index: 0, landmarks: store.landmarks)
+        }
         for landmark in store.landmarks {
             dump(landmark)
         }
