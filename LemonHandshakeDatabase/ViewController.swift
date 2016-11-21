@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     let fireButton = UIButton()
     
     var tappedBefore = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,20 +45,15 @@ class ViewController: UIViewController {
         fireButton.frame = CGRect(x: self.view.frame.width * 0.3, y: self.view.frame.width * 0.7, width: self.view.frame.width * 0.4, height: self.view.frame.height * 0.1)
         fireButton.backgroundColor = UIColor.black
         fireButton.addTarget(self, action: #selector(fireButtonTapped), for: .touchUpInside)
+        
     }
 
     func infoButtonTapped() {
         if !tappedBefore {
             tappedBefore = true
             LocationManager.setCoordinates(index: 0, landmarks: store.landmarks)
-        }
-        for landmark in store.landmarks {
-            dump(landmark)
-        }
-        for landmark in store.landmarks {
-            if landmark.latitude == nil || landmark.longitude == nil {
-                print("For \(landmark.name), latitude is \(landmark.latitude) and longitude is \(landmark.longitude)")
-            }
+        } else {
+            performSegue(withIdentifier: "showUnlocated", sender: self)
         }
     }
     
@@ -70,6 +66,12 @@ class ViewController: UIViewController {
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showUnlocated" {
+            
+            
+        }
+    }
 
 }
 

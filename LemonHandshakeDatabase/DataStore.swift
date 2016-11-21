@@ -32,6 +32,18 @@ class DataStore {
     
     private init(){}
     
+    var unlocatedLandmarks: [Landmark] {
+        var returnValue = [Landmark]()
+        
+        for landmark in landmarks {
+            if landmark.locationError {
+                returnValue.append(landmark)
+            }
+        }
+        
+        return returnValue
+    }
+    
     func getMarkersFromAPI(_ completion: @escaping ([Landmark]) -> Void){
         
         self.hospitals = []

@@ -14,6 +14,11 @@ protocol Landmark {
     var latitude: String? { get set }
     var longitude: String? { get set }
 }
+extension Landmark {
+    var locationError: Bool {
+        return latitude == nil || longitude == nil
+    }
+}
 
 class School: Landmark {
     

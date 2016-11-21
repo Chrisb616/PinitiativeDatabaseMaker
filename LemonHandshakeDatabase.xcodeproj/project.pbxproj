@@ -12,8 +12,8 @@
 		1B0A37871DDE4B4B00E095D6 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37831DDE4B4B00E095D6 /* Landmark.swift */; };
 		1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37841DDE4B4B00E095D6 /* DataStore.swift */; };
 		1B0BBE081DDF588E0018E274 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BBE071DDF588E0018E274 /* LocationManager.swift */; };
-		1B12092C1DE36B52003E306E /* UnlocatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12092B1DE36B52003E306E /* UnlocatedViewController.swift */; };
-		1B12092E1DE36BFF003E306E /* UnlocatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12092D1DE36BFF003E306E /* UnlocatedTableViewCell.swift */; };
+		1B1209301DE374D8003E306E /* UnlocatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12092F1DE374D8003E306E /* UnlocatedTableViewController.swift */; };
+		1B1209331DE377B4003E306E /* UnlocatedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1209321DE377B4003E306E /* UnlocatedDetailViewController.swift */; };
 		1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */; };
 		1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */; };
 		1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AD1DDD059A0060292D /* AppDelegate.swift */; };
@@ -30,8 +30,8 @@
 		1B0A37831DDE4B4B00E095D6 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		1B0A37841DDE4B4B00E095D6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1B0BBE071DDF588E0018E274 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		1B12092B1DE36B52003E306E /* UnlocatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlocatedViewController.swift; sourceTree = "<group>"; };
-		1B12092D1DE36BFF003E306E /* UnlocatedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlocatedTableViewCell.swift; sourceTree = "<group>"; };
+		1B12092F1DE374D8003E306E /* UnlocatedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlocatedTableViewController.swift; sourceTree = "<group>"; };
+		1B1209321DE377B4003E306E /* UnlocatedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlocatedDetailViewController.swift; sourceTree = "<group>"; };
 		1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
 		1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B4517AA1DDD059A0060292D /* LemonHandshakeDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonHandshakeDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1209311DE374F0003E306E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B4517AF1DDD059A0060292D /* ViewController.swift */,
+				1B12092F1DE374D8003E306E /* UnlocatedTableViewController.swift */,
+				1B1209321DE377B4003E306E /* UnlocatedDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1B4517A11DDD059A0060292D = {
 			isa = PBXGroup;
 			children = (
@@ -79,14 +89,12 @@
 		1B4517AC1DDD059A0060292D /* LemonHandshakeDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				1B1209311DE374F0003E306E /* ViewControllers */,
 				1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */,
 				1B0A37821DDE4B4B00E095D6 /* Secrets.swift */,
 				1B0A37831DDE4B4B00E095D6 /* Landmark.swift */,
 				1B0A37841DDE4B4B00E095D6 /* DataStore.swift */,
 				1B4517AD1DDD059A0060292D /* AppDelegate.swift */,
-				1B4517AF1DDD059A0060292D /* ViewController.swift */,
-				1B12092B1DE36B52003E306E /* UnlocatedViewController.swift */,
-				1B12092D1DE36BFF003E306E /* UnlocatedTableViewCell.swift */,
 				1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */,
 				1B4517B11DDD059A0060292D /* Main.storyboard */,
 				1B4517B41DDD059A0060292D /* Assets.xcassets */,
@@ -240,15 +248,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */,
-				1B12092E1DE36BFF003E306E /* UnlocatedTableViewCell.swift in Sources */,
+				1B1209301DE374D8003E306E /* UnlocatedTableViewController.swift in Sources */,
 				1B4517B01DDD059A0060292D /* ViewController.swift in Sources */,
 				1B0A37861DDE4B4B00E095D6 /* Secrets.swift in Sources */,
 				1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */,
 				1B0BBE081DDF588E0018E274 /* LocationManager.swift in Sources */,
-				1B12092C1DE36B52003E306E /* UnlocatedViewController.swift in Sources */,
 				1B0A37851DDE4B4B00E095D6 /* SodaAPIClient.swift in Sources */,
 				1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */,
 				1B0A37871DDE4B4B00E095D6 /* Landmark.swift in Sources */,
+				1B1209331DE377B4003E306E /* UnlocatedDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
