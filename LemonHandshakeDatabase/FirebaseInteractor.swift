@@ -68,9 +68,8 @@ extension FirebaseInteractor {
     }
     
     func geoFireStore(key: String, landmark: Landmark){
-        let landmarkKey = FIRDatabase.database().reference().childByAutoId().key
         
-        let geoFireRef = FIRDatabase.database().reference()
+        let geoFireRef = FIRDatabase.database().reference().child("geofire")
         guard let geoFire = GeoFire(firebaseRef: geoFireRef) else { print("GeoFire failure"); return }
         
         guard
@@ -82,7 +81,13 @@ extension FirebaseInteractor {
         
         let location = CLLocation(latitude: latitude, longitude: longitude)
         
-        geoFire.setLocation(location, forKey: landmarkKey)
+        geoFire.setLocation(location, forKey: key) { (error) in
+            if let  error = error {
+                print("FAILURE: \(landmark.name) has GeoFire storage error: \(error.localizedDescription)")
+            } else {
+                print("SUCCESS: \(landmark.name) stored via GeoFire")
+            }
+        }
         
         
     }
