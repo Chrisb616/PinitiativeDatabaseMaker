@@ -10,11 +10,14 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import GeoFire
 
 class FirebaseInteractor {
     
     static let shared = FirebaseInteractor()
-    private init() {}
+    private init() {
+    
+    }
     
     let ref = FIRDatabase.database().reference()
 }
@@ -47,6 +50,7 @@ extension FirebaseInteractor {
         for landmark in landmarks {
             let key = ref.childByAutoId().key
             data[key] = landmark.serialized
+            geoFireStore(key: key, landmark: landmark)
             print("\(landmark.name) serialized")
         }
         return data
@@ -61,6 +65,26 @@ extension FirebaseInteractor {
                 print("Successful storage at \(reference)")
             }
         }
+    }
+    
+    func geoFireStore(key: String, landmark: Landmark){
+        let landmarkKey = FIRDatabase.database().reference().childByAutoId().key
+        
+        let geoFireRef = FIRDatabase.database().reference()
+        guard let geoFire = GeoFire(firebaseRef: geoFireRef) else { print("GeoFire failure"); return }
+        
+        guard
+            let latitudeString = landmark.latitude,
+            let latitude = Double(latitudeString),
+            let longitudeString = landmark.longitude,
+            let longitude = Double(longitudeString)
+            else { print("FAILURE: Cannot convert coordinate info from \(landmark.name) into doubles"); return }
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        geoFire.setLocation(location, forKey: landmarkKey)
+        
+        
     }
     
 }

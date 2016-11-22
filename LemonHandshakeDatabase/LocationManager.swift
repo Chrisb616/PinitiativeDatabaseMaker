@@ -8,21 +8,18 @@
 
 import Foundation
 import CoreLocation
+import GeoFire
 
 class LocationManager {
     
     static func setCoordinates(index: Int, landmarks: [Landmark]) {
         
-        //if index % 2 == 0 {
-            sleep(1)
-        //}
-        
         if index < landmarks.count {
             if let park = landmarks[index] as? Park {
+                sleep(1)
                 
                 if let address = park.address {
                     let geocoder = CLGeocoder()
-                    
                     
                     geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
                         print("\n\nPROGRESS: Now geocoding for \(park.name)... \(index)")
@@ -43,6 +40,7 @@ class LocationManager {
                     setCoordinates(index: index + 1, landmarks: landmarks)
                 }
             } else if let school = landmarks[index] as? School {
+                sleep(1)
                 
                 if let address = school.address {
                     let geocoder = CLGeocoder()
