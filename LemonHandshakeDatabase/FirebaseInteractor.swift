@@ -73,10 +73,9 @@ extension FirebaseInteractor {
         guard let geoFire = GeoFire(firebaseRef: geoFireRef) else { print("GeoFire failure"); return }
         
         guard
-            let latitudeString = landmark.latitude,
-            let latitude = Double(latitudeString),
-            let longitudeString = landmark.longitude,
-            let longitude = Double(longitudeString)
+            let latitude = landmark.latitude,
+            let longitude = landmark.longitude
+        
             else { print("FAILURE: Cannot convert coordinate info from \(landmark.name) into doubles"); return }
         
         let location = CLLocation(latitude: latitude, longitude: longitude)

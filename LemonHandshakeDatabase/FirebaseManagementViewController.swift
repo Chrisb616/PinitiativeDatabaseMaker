@@ -122,7 +122,7 @@ class FirebaseManagementViewController: UIViewController {
         pullFirLabel.font = UIFont(name: "Avenir", size: 12)
         
         addMarkButton.layer.cornerRadius = 15
-        addMarkButton.addTarget(self, action: #selector(tapaddMarkButton), for: .touchUpInside)
+        addMarkButton.addTarget(self, action: #selector(tapAddMarkButton), for: .touchUpInside)
         
         addMarkLabel.text = "Step 2: Add a new landmark to the database"
         addMarkLabel.numberOfLines = 3
@@ -156,18 +156,17 @@ class FirebaseManagementViewController: UIViewController {
     
     
     func tappullFirButton() {
-        SodaAPIClient.retrieveAndStoreData()
     }
     
-    func tapaddMarkButton() {
-        var landmarks = [Landmark]()
-        
-        for landmark in store.landmarks {
-            if landmark.latitude == nil || landmark.longitude == nil {
-                landmarks.append(landmark)
-            }
-        }
-        LocationManager.setCoordinates(landmarks: landmarks)
+    func tapAddMarkButton() {
+//        var landmarks = [Landmark]()
+//        
+//        for landmark in store.landmarks {
+//            if landmark.latitude == nil || landmark.longitude == nil {
+//                landmarks.append(landmark)
+//            }
+//        }
+//        LocationManager.setCoordinates(landmarks: landmarks)
     }
     func tapFixMarkButton() {
         let dest = LandmarkViewController()

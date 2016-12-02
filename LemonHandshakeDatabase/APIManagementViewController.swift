@@ -118,7 +118,7 @@ class APIManagementViewController: UIViewController {
         pullAPIButton.layer.cornerRadius = 15
         pullAPIButton.addTarget(self, action: #selector(tapPullAPIButton), for: .touchUpInside)
         
-        pullAPILabel.text = "Step 1: Pull locations from Open Data"
+        pullAPILabel.text = "Step 1: Pull locations from Pluto"
         pullAPILabel.numberOfLines = 3
         pullAPILabel.textAlignment = .center
         pullAPILabel.font = UIFont(name: "Avenir", size: 12)
@@ -126,7 +126,7 @@ class APIManagementViewController: UIViewController {
         geoCodeButton.layer.cornerRadius = 15
         geoCodeButton.addTarget(self, action: #selector(tapGeoCodeButton), for: .touchUpInside)
         
-        geoCodeLabel.text = "Step 2: Geocode the data in data store"
+        geoCodeLabel.text = "Step 2: Geocode the data in data store (Currently depricated)"
         geoCodeLabel.numberOfLines = 3
         geoCodeLabel.textAlignment = .center
         geoCodeLabel.font = UIFont(name: "Avenir", size: 12)
@@ -159,18 +159,20 @@ class APIManagementViewController: UIViewController {
     
     
     func tapPullAPIButton() {
-        SodaAPIClient.retrieveAndStoreData()
+        store.getLandmarksFromAPI { (landmarks) in
+            print(landmarks.count)
+        }
     }
     
     func tapGeoCodeButton() {
-        var landmarks = [Landmark]()
-        
-        for landmark in store.landmarks {
-            if landmark.latitude == nil || landmark.longitude == nil {
-                landmarks.append(landmark)
-            }
-        }
-        LocationManager.setCoordinates(landmarks: landmarks)
+//        var landmarks = [Landmark]()
+//        
+//        for landmark in store.landmarks {
+//            if landmark.latitude == nil || landmark.longitude == nil {
+//                landmarks.append(landmark)
+//            }
+//        }
+        //LocationManager.setCoordinates(landmarks: landmarks)
     }
     func tapFixMarkButton() {
         let dest = LandmarkViewController()
@@ -183,7 +185,7 @@ class APIManagementViewController: UIViewController {
         
     }
     func tapFirPushButton() {
-        
+        FirebaseInteractor.shared.serializeAndStoreDataOnFirebase()
     }
     
     func tapBackButton() {

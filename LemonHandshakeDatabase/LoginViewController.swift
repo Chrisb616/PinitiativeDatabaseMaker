@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -20,9 +21,12 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initializeViews()
         
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            
+        })
     }
     
     func initializeViews() {

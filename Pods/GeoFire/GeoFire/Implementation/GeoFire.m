@@ -8,7 +8,7 @@
 
 //#import "FirebaseDatabase.h"
 
-#import </Users/flatironschool/Documents/Projects/lemonhandshakeDatabaseMaker/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h>
+#import <FirebaseDatabase/FirebaseDatabase.h>
 
 #import "GeoFire.h"
 #import "GeoFire+Private.h"

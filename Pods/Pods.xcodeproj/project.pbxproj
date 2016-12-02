@@ -33,6 +33,7 @@
 		7BACCF61D73B6C690CE657C66614E65F /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 691CB048790F871ED3C6444BE7DDAF86 /* GTMSessionFetcherLogging.m */; };
 		7CB712C6A1E658068A0F9DAB530FB705 /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F4FA9D14CDB09F9DD1DEAC86E9735F /* GTMSessionFetcher.m */; };
 		8F8D1EEFFD0AC14C975C78CAD0C9808F /* GTMSessionFetcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92662351D3A4937EACB1A84B7A14E01D /* GTMSessionFetcher-dummy.m */; };
+		925FF4AC1DF1CA8F0093C19F /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E2E700E3B3DD58A7DCAB9A36D1CA0C /* FirebaseDatabase.framework */; };
 		942E5040D1E972ADDF2DB2F58A69B9A6 /* GeoFire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF6FD822F00F8FD7BB7739FFEE387AA /* GeoFire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A03275F6099149BA40499CCE7A70E8F /* GTMSessionFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B364F6CADAC8DC171A0F8164411528E6 /* GTMSessionFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9EB44D548B901D324940C86B706CCF96 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F410A063D094D13B221C813FF57601D /* Security.framework */; };
@@ -190,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925FF4AC1DF1CA8F0093C19F /* FirebaseDatabase.framework in Frameworks */,
 				A3B194274307596B76B7937250147CA2 /* CoreLocation.framework in Frameworks */,
 				2E9E7D066249C95D3F055195ABD85B08 /* Foundation.framework in Frameworks */,
 				E514C58DD45A98FBE215C31697E4E322 /* GoogleToolboxForMac.framework in Frameworks */,
@@ -847,6 +849,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FirebaseDatabase/Frameworks",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/GeoFire/GeoFire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GeoFire/Info.plist";
@@ -1069,6 +1075,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FirebaseDatabase/Frameworks",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/GeoFire/GeoFire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GeoFire/Info.plist";
