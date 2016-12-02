@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Firebase. All rights reserved.
 //
 
-#import </Users/flatironschool/Documents/Projects/lemonHandshakeDatabaseMaker/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h>
+#import <FirebaseDatabase/FirebaseDatabase.h>
 
 #import "GFQuery.h"
 #import "GFRegionQuery.h"

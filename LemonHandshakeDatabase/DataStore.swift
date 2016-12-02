@@ -10,56 +10,28 @@ import Foundation
 
 class DataStore {
     
-    var landmarks: [Landmark] {
-        var landmarks = [Landmark]()
-        for landmark in hospitals {
-            landmarks.append(landmark)
-        }
-        for landmark in parks {
-            landmarks.append(landmark)
-        }
-        for landmark in hospitals {
-            landmarks.append(landmark)
-        }
-        return landmarks
-    }
-    var hospitals = [Hospital]()
-    var parks = [Park]()
-    var schools = [School]()
+    var landmarks = [Landmark]()
+    
     let firebaseInteractor = FirebaseInteractor.shared
     
     static let sharedInstance = DataStore()
     
     private init(){}
     
-    var unlocatedLandmarks: [Landmark] {
-        var returnValue = [Landmark]()
+    func getLandmarksFromAPI(_ completion: @escaping ([Landmark]) -> Void){
         
-        for landmark in landmarks {
-            if landmark.locationError {
-                returnValue.append(landmark)
-            }
-        }
-        
-        return returnValue
-    }
-    
-    func getMarkersFromAPI(_ completion: @escaping ([Landmark]) -> Void){
-        
-        self.hospitals = []
-        self.parks = []
-        self.schools = []
         
         SodaAPIClient.getSchoolInfo(completion: { (arrayOfDictionaries) in
-            
+           
             for marker in arrayOfDictionaries {
                 
-                let newMarker = School.init(dictionary: marker)
+                let newMarker = Landmark.init(dictionary: [marker])
                 
-                self.schools.append(newMarker)
-                
+                self.landmarks.append(newMarker)
+             
             }
-            completion(self.schools)
+            completion(self.landmarks)
+
         })
         
         
@@ -67,13 +39,13 @@ class DataStore {
             
             for marker in arrayOfDictionaries {
                 
-                let newMarker = Park.init(dictionary: marker)
+                let newMarker = Landmark.init(dictionary: [marker])
                 
-                self.parks.append(newMarker)
-                
+                self.landmarks.append(newMarker)
                 
             }
-            completion(self.parks)
+            completion(self.landmarks)
+            
         })
         
         
@@ -81,18 +53,32 @@ class DataStore {
             
             for marker in arrayOfDictionaries {
                 
-                let newMarker = Hospital.init(dictionary: marker)
+                let newMarker = Landmark.init(dictionary: [marker])
                 
-                self.hospitals.append(newMarker)
-                
+                self.landmarks.append(newMarker)
                 
             }
-            completion(self.hospitals)
+            completion(self.landmarks)
+            
         })
-    }
     
     
-}
+        SodaAPIClient.getPoliceInfo(completion: { (arrayOfDictionaries) in
+        
+        for marker in arrayOfDictionaries {
+        
+        let newMarker = Landmark.init(dictionary: [marker])
+        
+        self.landmarks.append(newMarker)
+        
+        }
+        completion(self.landmarks)
+        
+        })
 
+
+    }
+
+}
 
 
