@@ -18,12 +18,14 @@
 		1B4517B51DDD059A0060292D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B41DDD059A0060292D /* Assets.xcassets */; };
 		1B4517B81DDD059A0060292D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B61DDD059A0060292D /* LaunchScreen.storyboard */; };
 		1B5A8CE21DF0D2ED00AD29B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE11DF0D2ED00AD29B6 /* LoginViewController.swift */; };
-		1B5A8CE41DF0D30000AD29B6 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE31DF0D30000AD29B6 /* LandingViewController.swift */; };
-		1B5A8CE61DF0D33A00AD29B6 /* LandmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE51DF0D33A00AD29B6 /* LandmarkTableViewController.swift */; };
+		1B5A8CE41DF0D30000AD29B6 /* APIManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE31DF0D30000AD29B6 /* APIManagementViewController.swift */; };
+		1B5A8CE61DF0D33A00AD29B6 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE51DF0D33A00AD29B6 /* LandmarkViewController.swift */; };
 		1B5A8CE81DF0D34900AD29B6 /* LandmarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */; };
 		1B5A8CEB1DF0D48400AD29B6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CEA1DF0D48400AD29B6 /* UIColor.swift */; };
 		1B5A8CED1DF0D5C300AD29B6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CEC1DF0D5C300AD29B6 /* UIView.swift */; };
 		1B5A8CEF1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CEE1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift */; };
+		1B5A8CF11DF1D88600AD29B6 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CF01DF1D88600AD29B6 /* LandingViewController.swift */; };
+		1B5A8CF31DF1E44A00AD29B6 /* FirebaseManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CF21DF1E44A00AD29B6 /* FirebaseManagementViewController.swift */; };
 		2A39F04060EB60802B29BB1B /* Pods_LemonHandshakeDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE646C94E904F805154D8F /* Pods_LemonHandshakeDatabase.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,12 +44,14 @@
 		1B4517B71DDD059A0060292D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4517B91DDD059A0060292D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B5A8CE11DF0D2ED00AD29B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1B5A8CE31DF0D30000AD29B6 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		1B5A8CE51DF0D33A00AD29B6 /* LandmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkTableViewController.swift; sourceTree = "<group>"; };
+		1B5A8CE31DF0D30000AD29B6 /* APIManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagementViewController.swift; sourceTree = "<group>"; };
+		1B5A8CE51DF0D33A00AD29B6 /* LandmarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
 		1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkDetailViewController.swift; sourceTree = "<group>"; };
 		1B5A8CEA1DF0D48400AD29B6 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1B5A8CEC1DF0D5C300AD29B6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1B5A8CEE1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkTableViewCell.swift; sourceTree = "<group>"; };
+		1B5A8CF01DF1D88600AD29B6 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		1B5A8CF21DF1E44A00AD29B6 /* FirebaseManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManagementViewController.swift; sourceTree = "<group>"; };
 		607E0425952358F31C313F27 /* Pods-LemonHandshakeDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		B8635ADD3103AAA3C8F4102A /* Pods-LemonHandshakeDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,10 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				1B5A8CE11DF0D2ED00AD29B6 /* LoginViewController.swift */,
-				1B5A8CE31DF0D30000AD29B6 /* LandingViewController.swift */,
-				1B5A8CE51DF0D33A00AD29B6 /* LandmarkTableViewController.swift */,
-				1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */,
+				1B5A8CF01DF1D88600AD29B6 /* LandingViewController.swift */,
+				1B5A8CF21DF1E44A00AD29B6 /* FirebaseManagementViewController.swift */,
+				1B5A8CE31DF0D30000AD29B6 /* APIManagementViewController.swift */,
+				1B5A8CE51DF0D33A00AD29B6 /* LandmarkViewController.swift */,
 				1B5A8CEE1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift */,
+				1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -273,10 +279,12 @@
 				1B0A37851DDE4B4B00E095D6 /* SodaAPIClient.swift in Sources */,
 				1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */,
 				1B0A37871DDE4B4B00E095D6 /* Landmark.swift in Sources */,
-				1B5A8CE41DF0D30000AD29B6 /* LandingViewController.swift in Sources */,
+				1B5A8CE41DF0D30000AD29B6 /* APIManagementViewController.swift in Sources */,
 				1B5A8CE81DF0D34900AD29B6 /* LandmarkDetailViewController.swift in Sources */,
 				1B5A8CE21DF0D2ED00AD29B6 /* LoginViewController.swift in Sources */,
-				1B5A8CE61DF0D33A00AD29B6 /* LandmarkTableViewController.swift in Sources */,
+				1B5A8CF11DF1D88600AD29B6 /* LandingViewController.swift in Sources */,
+				1B5A8CF31DF1E44A00AD29B6 /* FirebaseManagementViewController.swift in Sources */,
+				1B5A8CE61DF0D33A00AD29B6 /* LandmarkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

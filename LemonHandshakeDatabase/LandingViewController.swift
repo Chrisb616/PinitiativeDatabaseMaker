@@ -2,7 +2,7 @@
 //  LandingViewController.swift
 //  LemonHandshakeDatabase
 //
-//  Created by Christopher Boynton on 12/1/16.
+//  Created by Christopher Boynton on 12/2/16.
 //  Copyright © 2016 Flatiron School. All rights reserved.
 //
 
@@ -10,123 +10,117 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
-    var store = DataStore.sharedInstance
+    var apiManagementButton = UIButton()
+    var apiManagementLabel = UILabel()
+    var apiManagementText = UITextView()
     
-    var pullAPIButton = UIButton()
-    var pullAPILabel = UILabel()
-    
-    var geoCodeButton = UIButton()
-    var geoCodeLabel = UILabel()
-    
-    var fixMarkButton = UIButton()
-    var fixMarkLabel = UILabel()
+    var firebaseManagementButton = UIButton()
+    var firebaseManagementLabel = UILabel()
+    var firebaseManagementText = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initalizeViews()
+        initializeViews()
     }
     
-    func initalizeViews() {
+    func initializeViews() {
         
-        self.view.addSubviews(pullAPIButton, geoCodeButton, fixMarkButton)
+        self.view.addSubviews(apiManagementButton, firebaseManagementButton)
+        apiManagementButton.addSubviews(apiManagementLabel, apiManagementText)
+        firebaseManagementButton.addSubviews(firebaseManagementLabel, firebaseManagementText)
         
-        pullAPIButton.addSubview(pullAPILabel)
-        geoCodeButton.addSubview(geoCodeLabel)
-        fixMarkButton.addSubview(fixMarkLabel)
-        
-        constrainViews()
         colorizeViews()
+        constrainViews()
         customizeViews()
     }
-    
-    func constrainViews() {
-        pullAPIButton.translatesAutoresizingMaskIntoConstraints = false
-        pullAPILabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        geoCodeButton.translatesAutoresizingMaskIntoConstraints = false
-        geoCodeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        fixMarkButton.translatesAutoresizingMaskIntoConstraints = false
-        fixMarkLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        pullAPIButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height * 0.1).isActive = true
-        pullAPIButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width * 0.1).isActive = true
-        pullAPIButton.trailingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: self.view.frame.width * -0.05).isActive = true
-        pullAPIButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
-        
-        pullAPILabel.constrainTo(pullAPIButton)
-        
-        geoCodeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height * 0.1).isActive = true
-        geoCodeButton.leadingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: self.self.view.frame.width * 0.05).isActive = true
-        geoCodeButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: self.view.frame.width * -0.1).isActive = true
-        geoCodeButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
-        
-        geoCodeLabel.constrainTo(geoCodeButton)
-        
-        fixMarkButton.topAnchor.constraint(equalTo: geoCodeButton.bottomAnchor, constant: self.view.frame.height * 0.05).isActive = true
-        fixMarkButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width * 0.1).isActive = true
-        fixMarkButton.trailingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: self.view.frame.width * -0.05).isActive = true
-        fixMarkButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
-        
-        fixMarkLabel.constrainTo(fixMarkButton)
-    }
-    
     func colorizeViews() {
         self.view.backgroundColor = UIColor.themePurple
-        pullAPIButton.backgroundColor = UIColor.themeOrange
-        pullAPILabel.textColor = UIColor.black
-        geoCodeButton.backgroundColor = UIColor.themeOrange
-        geoCodeLabel.textColor = UIColor.black
-        fixMarkButton.backgroundColor = UIColor.themeOrange
-        fixMarkLabel.textColor = UIColor.black
+        
+        apiManagementButton.backgroundColor = UIColor.themeOrange
+        apiManagementText.backgroundColor = nil
+        
+        firebaseManagementButton.backgroundColor = UIColor.themeOrange
+        firebaseManagementText.backgroundColor = nil
     }
-    
+    func constrainViews() {
+        apiManagementButton.translatesAutoresizingMaskIntoConstraints = false
+        apiManagementLabel.translatesAutoresizingMaskIntoConstraints = false
+        apiManagementText.translatesAutoresizingMaskIntoConstraints = false
+        
+        apiManagementButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height * 0.05).isActive = true
+        apiManagementButton.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: self.view.frame.height * -0.025).isActive = true
+        apiManagementButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width * 0.1).isActive = true
+        apiManagementButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: self.view.frame.width * -0.1).isActive = true
+        
+        apiManagementLabel.topAnchor.constraint(equalTo: apiManagementButton.topAnchor).isActive = true
+        apiManagementLabel.leadingAnchor.constraint(equalTo: apiManagementButton.leadingAnchor).isActive = true
+        apiManagementLabel.trailingAnchor.constraint(equalTo: apiManagementButton.trailingAnchor).isActive = true
+        apiManagementLabel.heightAnchor.constraint(equalTo: apiManagementButton.heightAnchor, multiplier: 0.2).isActive = true
+        
+        apiManagementText.heightAnchor.constraint(equalTo: apiManagementButton.heightAnchor, multiplier: 0.7).isActive = true
+        apiManagementText.widthAnchor.constraint(equalTo: apiManagementButton.widthAnchor, multiplier: 0.9).isActive = true
+        apiManagementText.centerXAnchor.constraint(equalTo: apiManagementButton.centerXAnchor).isActive = true
+        apiManagementText.centerYAnchor.constraint(equalTo: apiManagementButton.centerYAnchor).isActive = true
+        
+        firebaseManagementButton.translatesAutoresizingMaskIntoConstraints = false
+        firebaseManagementLabel.translatesAutoresizingMaskIntoConstraints = false
+        firebaseManagementText.translatesAutoresizingMaskIntoConstraints = false
+        
+        firebaseManagementButton.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: self.view.frame.height * 0.025).isActive = true
+        firebaseManagementButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: self.view.frame.height * -0.05).isActive = true
+        firebaseManagementButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width * 0.1).isActive = true
+        firebaseManagementButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: self.view.frame.width * -0.1).isActive = true
+        
+        firebaseManagementLabel.topAnchor.constraint(equalTo: firebaseManagementButton.topAnchor).isActive = true
+        firebaseManagementLabel.leadingAnchor.constraint(equalTo: firebaseManagementButton.leadingAnchor).isActive = true
+        firebaseManagementLabel.trailingAnchor.constraint(equalTo: firebaseManagementButton.trailingAnchor).isActive = true
+        firebaseManagementLabel.heightAnchor.constraint(equalTo: firebaseManagementButton.heightAnchor, multiplier: 0.2).isActive = true
+        
+        firebaseManagementText.heightAnchor.constraint(equalTo: firebaseManagementButton.heightAnchor, multiplier: 0.7).isActive = true
+        firebaseManagementText.widthAnchor.constraint(equalTo: firebaseManagementButton.widthAnchor, multiplier: 0.9).isActive = true
+        firebaseManagementText.centerXAnchor.constraint(equalTo: firebaseManagementButton.centerXAnchor).isActive = true
+        firebaseManagementText.centerYAnchor.constraint(equalTo: firebaseManagementButton.centerYAnchor).isActive = true
+    }
     func customizeViews() {
-        pullAPIButton.layer.cornerRadius = 15
-        pullAPIButton.addTarget(self, action: #selector(tapPullAPIButton), for: .touchUpInside)
+        apiManagementButton.addTarget(self, action: #selector(tapAPIManagementButton), for: .touchUpInside)
+        apiManagementButton.layer.cornerRadius = 15
         
-        pullAPILabel.text = "Step 1: Pull locations from Open Data"
-        pullAPILabel.numberOfLines = 3
-        pullAPILabel.textAlignment = .center
-        pullAPILabel.font = UIFont(name: "Avenir", size: 12)
+        apiManagementLabel.text = "API Manager"
+        apiManagementLabel.textAlignment = .center
+        apiManagementLabel.font = UIFont(name: "Avenir", size: 20)
         
-        geoCodeButton.layer.cornerRadius = 15
-        geoCodeButton.addTarget(self, action: #selector(tapGeoCodeButton), for: .touchUpInside)
+        apiManagementText.text = "The API Manager allows for pulling from the PLUTO database, fixing up the information, and writing the new data to the Firebase Database. This should be done rarely, and only when there is new or updated data available. "
+        apiManagementText.font = UIFont(name: "Avenir", size: 15)
+        apiManagementText.isEditable = false
+        apiManagementText.isSelectable = false
+        apiManagementText.isUserInteractionEnabled = false
         
-        geoCodeLabel.text = "Step 2: Geocode the data in data store"
-        geoCodeLabel.numberOfLines = 3
-        geoCodeLabel.textAlignment = .center
-        geoCodeLabel.font = UIFont(name: "Avenir", size: 12)
+        firebaseManagementButton.addTarget(self, action: #selector(tapFirebaseManagementButton), for: .touchUpInside)
+        firebaseManagementButton.layer.cornerRadius = 15
         
-        fixMarkButton.layer.cornerRadius = 15
-        fixMarkButton.addTarget(self, action: #selector(tapFixMarkButton), for: .touchUpInside)
+        firebaseManagementLabel.text = "Firebase Manager"
+        firebaseManagementLabel.textAlignment = .center
+        firebaseManagementLabel.font = UIFont(name: "Avenir", size: 20)
         
-        fixMarkLabel.text = "Step 3: Manually fix landmarks with poor coordinates"
-        fixMarkLabel.numberOfLines = 3
-        fixMarkLabel.textAlignment = .center
-        fixMarkLabel.font = UIFont(name: "Avenir", size: 12)
+        firebaseManagementText.text = "The Firebase Manager allows for existing data to be pulled from the Firebase database, viewed, edited, and replaced on the same Firebase database. This can be done at any time, as the clearing of the database will only last for a moment before it is repopulated. "
+        firebaseManagementText.font = UIFont(name: "Avenir", size: 15)
+        firebaseManagementText.isEditable = false
+        firebaseManagementText.isSelectable = false
+        firebaseManagementText.isUserInteractionEnabled = false
     }
     
-    
-    
-    func tapPullAPIButton() {
-        SodaAPIClient.retrieveAndStoreData()
-    }
-    
-    func tapGeoCodeButton() {
-        LocationManager.setCoordinates(landmarks: store.landmarks)
-    }
-    func tapFixMarkButton() {
-        let dest = LandmarkTableViewController()
-        for landmark in store.landmarks {
-            if landmark.latitude == nil || landmark.longitude == nil {
-                print("Passing landmarks")
-                dest.landmarks.append(landmark)
-            }
-        }
+    func tapAPIManagementButton() {
+        
+        let dest = APIManagementViewController()
+        
         present(dest, animated: true)
+    }
+    func tapFirebaseManagementButton() {
         
+        let dest = FirebaseManagementViewController()
+        
+        present(dest, animated: true)
     }
 
 }
