@@ -12,15 +12,18 @@
 		1B0A37871DDE4B4B00E095D6 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37831DDE4B4B00E095D6 /* Landmark.swift */; };
 		1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A37841DDE4B4B00E095D6 /* DataStore.swift */; };
 		1B0BBE081DDF588E0018E274 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BBE071DDF588E0018E274 /* LocationManager.swift */; };
-		1B1209301DE374D8003E306E /* UnlocatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12092F1DE374D8003E306E /* UnlocatedTableViewController.swift */; };
-		1B1209331DE377B4003E306E /* UnlocatedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1209321DE377B4003E306E /* UnlocatedDetailViewController.swift */; };
 		1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */; };
 		1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */; };
 		1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AD1DDD059A0060292D /* AppDelegate.swift */; };
-		1B4517B01DDD059A0060292D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517AF1DDD059A0060292D /* ViewController.swift */; };
-		1B4517B31DDD059A0060292D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B11DDD059A0060292D /* Main.storyboard */; };
 		1B4517B51DDD059A0060292D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B41DDD059A0060292D /* Assets.xcassets */; };
 		1B4517B81DDD059A0060292D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4517B61DDD059A0060292D /* LaunchScreen.storyboard */; };
+		1B5A8CE21DF0D2ED00AD29B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE11DF0D2ED00AD29B6 /* LoginViewController.swift */; };
+		1B5A8CE41DF0D30000AD29B6 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE31DF0D30000AD29B6 /* LandingViewController.swift */; };
+		1B5A8CE61DF0D33A00AD29B6 /* LandmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE51DF0D33A00AD29B6 /* LandmarkTableViewController.swift */; };
+		1B5A8CE81DF0D34900AD29B6 /* LandmarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */; };
+		1B5A8CEB1DF0D48400AD29B6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CEA1DF0D48400AD29B6 /* UIColor.swift */; };
+		1B5A8CED1DF0D5C300AD29B6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CEC1DF0D5C300AD29B6 /* UIView.swift */; };
+		1B5A8CEF1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5A8CEE1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift */; };
 		2A39F04060EB60802B29BB1B /* Pods_LemonHandshakeDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE646C94E904F805154D8F /* Pods_LemonHandshakeDatabase.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,17 +34,20 @@
 		1B0A37831DDE4B4B00E095D6 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		1B0A37841DDE4B4B00E095D6 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1B0BBE071DDF588E0018E274 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		1B12092F1DE374D8003E306E /* UnlocatedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlocatedTableViewController.swift; sourceTree = "<group>"; };
-		1B1209321DE377B4003E306E /* UnlocatedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlocatedDetailViewController.swift; sourceTree = "<group>"; };
 		1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
 		1B1D71711DDD0C9D00CB1D3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B4517AA1DDD059A0060292D /* LemonHandshakeDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonHandshakeDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4517AD1DDD059A0060292D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B4517AF1DDD059A0060292D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1B4517B21DDD059A0060292D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B4517B41DDD059A0060292D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B4517B71DDD059A0060292D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4517B91DDD059A0060292D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B5A8CE11DF0D2ED00AD29B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1B5A8CE31DF0D30000AD29B6 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		1B5A8CE51DF0D33A00AD29B6 /* LandmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkTableViewController.swift; sourceTree = "<group>"; };
+		1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkDetailViewController.swift; sourceTree = "<group>"; };
+		1B5A8CEA1DF0D48400AD29B6 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1B5A8CEC1DF0D5C300AD29B6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1B5A8CEE1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkTableViewCell.swift; sourceTree = "<group>"; };
 		607E0425952358F31C313F27 /* Pods-LemonHandshakeDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		B8635ADD3103AAA3C8F4102A /* Pods-LemonHandshakeDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonHandshakeDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LemonHandshakeDatabase/Pods-LemonHandshakeDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,9 +67,11 @@
 		1B1209311DE374F0003E306E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B4517AF1DDD059A0060292D /* ViewController.swift */,
-				1B12092F1DE374D8003E306E /* UnlocatedTableViewController.swift */,
-				1B1209321DE377B4003E306E /* UnlocatedDetailViewController.swift */,
+				1B5A8CE11DF0D2ED00AD29B6 /* LoginViewController.swift */,
+				1B5A8CE31DF0D30000AD29B6 /* LandingViewController.swift */,
+				1B5A8CE51DF0D33A00AD29B6 /* LandmarkTableViewController.swift */,
+				1B5A8CE71DF0D34900AD29B6 /* LandmarkDetailViewController.swift */,
+				1B5A8CEE1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -89,14 +97,14 @@
 		1B4517AC1DDD059A0060292D /* LemonHandshakeDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				1B5A8CE91DF0D47100AD29B6 /* Extensions */,
 				1B1209311DE374F0003E306E /* ViewControllers */,
-				1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */,
 				1B0A37821DDE4B4B00E095D6 /* Secrets.swift */,
+				1B0A37811DDE4B4B00E095D6 /* SodaAPIClient.swift */,
 				1B0A37831DDE4B4B00E095D6 /* Landmark.swift */,
 				1B0A37841DDE4B4B00E095D6 /* DataStore.swift */,
 				1B4517AD1DDD059A0060292D /* AppDelegate.swift */,
 				1B1D716F1DDD099E00CB1D3F /* FirebaseInteractor.swift */,
-				1B4517B11DDD059A0060292D /* Main.storyboard */,
 				1B4517B41DDD059A0060292D /* Assets.xcassets */,
 				1B4517B61DDD059A0060292D /* LaunchScreen.storyboard */,
 				1B4517B91DDD059A0060292D /* Info.plist */,
@@ -104,6 +112,15 @@
 				1B0BBE071DDF588E0018E274 /* LocationManager.swift */,
 			);
 			path = LemonHandshakeDatabase;
+			sourceTree = "<group>";
+		};
+		1B5A8CE91DF0D47100AD29B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B5A8CEA1DF0D48400AD29B6 /* UIColor.swift */,
+				1B5A8CEC1DF0D5C300AD29B6 /* UIView.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		96D85487D1B40D4CEBA346F2 /* Pods */ = {
@@ -188,7 +205,6 @@
 				1B4517B81DDD059A0060292D /* LaunchScreen.storyboard in Resources */,
 				1B1D71721DDD0C9D00CB1D3F /* GoogleService-Info.plist in Resources */,
 				1B4517B51DDD059A0060292D /* Assets.xcassets in Resources */,
-				1B4517B31DDD059A0060292D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,30 +263,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B5A8CED1DF0D5C300AD29B6 /* UIView.swift in Sources */,
 				1B0A37881DDE4B4B00E095D6 /* DataStore.swift in Sources */,
-				1B1209301DE374D8003E306E /* UnlocatedTableViewController.swift in Sources */,
-				1B4517B01DDD059A0060292D /* ViewController.swift in Sources */,
+				1B5A8CEB1DF0D48400AD29B6 /* UIColor.swift in Sources */,
 				1B0A37861DDE4B4B00E095D6 /* Secrets.swift in Sources */,
 				1B4517AE1DDD059A0060292D /* AppDelegate.swift in Sources */,
+				1B5A8CEF1DF0FC1A00AD29B6 /* LandmarkTableViewCell.swift in Sources */,
 				1B0BBE081DDF588E0018E274 /* LocationManager.swift in Sources */,
 				1B0A37851DDE4B4B00E095D6 /* SodaAPIClient.swift in Sources */,
 				1B1D71701DDD099E00CB1D3F /* FirebaseInteractor.swift in Sources */,
 				1B0A37871DDE4B4B00E095D6 /* Landmark.swift in Sources */,
-				1B1209331DE377B4003E306E /* UnlocatedDetailViewController.swift in Sources */,
+				1B5A8CE41DF0D30000AD29B6 /* LandingViewController.swift in Sources */,
+				1B5A8CE81DF0D34900AD29B6 /* LandmarkDetailViewController.swift in Sources */,
+				1B5A8CE21DF0D2ED00AD29B6 /* LoginViewController.swift in Sources */,
+				1B5A8CE61DF0D33A00AD29B6 /* LandmarkTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1B4517B11DDD059A0060292D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B4517B21DDD059A0060292D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1B4517B61DDD059A0060292D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -382,7 +394,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LemonHandshakeDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatiron.LemonHandshakeDatabase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatiron.PinitiativeDatabaseMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -395,7 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LemonHandshakeDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatiron.LemonHandshakeDatabase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatiron.PinitiativeDatabaseMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

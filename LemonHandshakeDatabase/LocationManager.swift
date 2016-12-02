@@ -12,7 +12,9 @@ import GeoFire
 
 class LocationManager {
     
-    static func setCoordinates(index: Int, landmarks: [Landmark]) {
+    //This function will play recursively until it reaches the count of the landmarks.
+    //It should always be called with index 0, so that is put in as a default value
+    static func setCoordinates(index: Int = 0, landmarks: [Landmark]) {
         
         if index < landmarks.count {
             if let park = landmarks[index] as? Park {
@@ -30,7 +32,6 @@ class LocationManager {
                                 park.longitude = coordinates.longitude.description
                                 print("\n\nSUCCESS: Geocoded for \(park.name) at address: \(address)! It's located at \(park.latitude), \(park.longitude) \(index)")
                             }
-                            print("D'OH")
                         } else {
                             print("\n\nFAILURE: \(park.name) at address: \(address) could not be geocoded. ERROR: \(error?.localizedDescription) \(index)")
                         }

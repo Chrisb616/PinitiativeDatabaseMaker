@@ -1,38 +1,26 @@
 //
-//  UnlocatedTableViewController.swift
+//  LandmarkTableViewController.swift
 //  LemonHandshakeDatabase
 //
-//  Created by Christopher Boynton on 11/21/16.
+//  Created by Christopher Boynton on 12/1/16.
 //  Copyright © 2016 Flatiron School. All rights reserved.
 //
 
 import UIKit
 
-class UnlocatedTableViewController: UITableViewController {
+class LandmarkTableViewController: UITableViewController {
     
-    let store = DataStore.sharedInstance
+    var landmarks = [Landmark]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        tableView.register(LandmarkTableViewCell.self, forCellReuseIdentifier: "landmarkCell")
+        
+        print(landmarks.count)
+        
+        
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -41,18 +29,18 @@ class UnlocatedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return store.unlocatedLandmarks.count
+        return landmarks.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "unlocatedCell", for: indexPath)
-
-        cell.textLabel?.text = store.unlocatedLandmarks[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "landmarkCell", for: indexPath) as? LandmarkTableViewCell else {
+            return LandmarkTableViewCell()
+        }
+        
+        cell.textLabel?.text = landmarks[indexPath.row].name
 
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,15 +77,14 @@ class UnlocatedTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! UnlocatedDetailViewController
-        
-        dest.landmark = store.unlocatedLandmarks[(tableView.indexPathForSelectedRow?.row)!]
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
- 
+    */
 
 }

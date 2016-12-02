@@ -44,54 +44,6 @@ class DataStore {
         return returnValue
     }
     
-    func getMarkersFromAPI(_ completion: @escaping ([Landmark]) -> Void){
-        
-        self.hospitals = []
-        self.parks = []
-        self.schools = []
-        
-        SodaAPIClient.getSchoolInfo(completion: { (arrayOfDictionaries) in
-            
-            for marker in arrayOfDictionaries {
-                
-                let newMarker = School.init(dictionary: marker)
-                
-                self.schools.append(newMarker)
-                
-            }
-            completion(self.schools)
-        })
-        
-        
-        SodaAPIClient.getParkInfo(completion: { (arrayOfDictionaries) in
-            
-            for marker in arrayOfDictionaries {
-                
-                let newMarker = Park.init(dictionary: marker)
-                
-                self.parks.append(newMarker)
-                
-                
-            }
-            completion(self.parks)
-        })
-        
-        
-        SodaAPIClient.getHospitalInfo(completion: { (arrayOfDictionaries) in
-            
-            for marker in arrayOfDictionaries {
-                
-                let newMarker = Hospital.init(dictionary: marker)
-                
-                self.hospitals.append(newMarker)
-                
-                
-            }
-            completion(self.hospitals)
-        })
-    }
-    
-    
 }
 
 

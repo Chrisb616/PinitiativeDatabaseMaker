@@ -9,9 +9,35 @@
 import Foundation
 
 class SodaAPIClient {
-
     
-    class func getSchoolInfo(completion: @escaping ([[String: Any]]) -> Void) {
+
+    class func retrieveAndStoreData() {
+        let store = DataStore.sharedInstance
+        
+        SodaAPIClient.getHospitalInfo { (data) in
+            for dictionary in data {
+                let hospital = Hospital(dictionary: dictionary)
+                print("\(hospital.name) pulled from API. ")
+                store.hospitals.append(hospital)
+            }
+        }
+        SodaAPIClient.getParkInfo { (data) in
+            for dictionary in data {
+                let park = Park(dictionary: dictionary)
+                print("\(park.name) pulled from API. ")
+                store.parks.append(park)
+            }
+        }
+        SodaAPIClient.getSchoolInfo { (data) in
+            for dictionary in data {
+                let school = School(dictionary: dictionary)
+                print("\(school.name) pulled from API. ")
+                store.schools.append(school)
+            }
+        }
+    }
+    
+    class private func getSchoolInfo(completion: @escaping ([[String: Any]]) -> Void) {
             // make search request to apis here using the lat and long data.  Then take returned dictionary and send it through to functions requestor.
         
             let url = URL(string: ("\(baseURL)\(schoolsCode)"))
@@ -30,6 +56,7 @@ class SodaAPIClient {
                             completion(responseJSON)
                             
                         } catch {
+                        
                         }
                     }
                 }
@@ -37,7 +64,7 @@ class SodaAPIClient {
             }
         }
     
-    class func getParkInfo(completion: @escaping ([[String: Any]]) -> Void) {
+    class private func getParkInfo(completion: @escaping ([[String: Any]]) -> Void) {
         // make search request to apis here using the lat and long data.  Then take returned dictionary and send it through to functions requestor.
         
         let url = URL(string: ("\(baseURL)\(parksCode)"))
@@ -63,7 +90,7 @@ class SodaAPIClient {
         }
     }
 
-    class func getHospitalInfo(completion: @escaping ([[String: Any]]) -> Void) {
+    class private func getHospitalInfo(completion: @escaping ([[String: Any]]) -> Void) {
         // make search request to apis here using the lat and long data.  Then take returned dictionary and send it through to functions requestor.
         
         let url = URL(string: ("\(baseURL)\(hospitalsCode)"))
