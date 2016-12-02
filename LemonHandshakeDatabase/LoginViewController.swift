@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
@@ -24,9 +25,6 @@ class LoginViewController: UIViewController {
         
         initializeViews()
         
-        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
-            
-        })
     }
     
     func initializeViews() {
