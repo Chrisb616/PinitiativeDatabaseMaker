@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         initializeViews()
+        colorizeViews()
+        constrainViews()
+        customizeViews()
         
     }
     
@@ -33,9 +36,6 @@ class LoginViewController: UIViewController {
         emailTextFieldView.addSubview(emailTextField)
         passwordTextFieldView.addSubview(passwordTextField)
         
-        colorizeViews()
-        constrainViews()
-        customizeViews()
     }
     
     func constrainViews() {

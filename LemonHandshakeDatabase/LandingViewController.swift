@@ -22,6 +22,9 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
 
         initializeViews()
+        colorizeViews()
+        constrainViews()
+        customizeViews()
     }
     
     func initializeViews() {
@@ -30,9 +33,6 @@ class LandingViewController: UIViewController {
         apiManagementButton.addSubviews(apiManagementLabel, apiManagementText)
         firebaseManagementButton.addSubviews(firebaseManagementLabel, firebaseManagementText)
         
-        colorizeViews()
-        constrainViews()
-        customizeViews()
     }
     func colorizeViews() {
         self.view.backgroundColor = UIColor.themePurple

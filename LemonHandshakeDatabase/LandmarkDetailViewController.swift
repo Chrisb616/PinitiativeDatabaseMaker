@@ -9,11 +9,18 @@
 import UIKit
 
 class LandmarkDetailViewController: UIViewController {
+    
+    var landmark: Landmark!
+    
+    var nameTextField = UITextField()
+    var addressTextField = UITextField()
+    var latitudeTextField = UITextField()
+    var agencyTextField = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

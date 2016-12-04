@@ -12,7 +12,7 @@ class DataStore {
     
     var landmarks = [Landmark]()
     
-    let firebaseInteractor = FirebaseInteractor.shared
+    let firebaseInteractor = FirebaseAPI.shared
     
     static let sharedInstance = DataStore()
     

@@ -1,5 +1,5 @@
 //
-//  FirebaseInteractor.swift
+//  FirebaseAPI.swift
 //  LemonHandshakeDatabase
 //
 //  Created by Christopher Boynton on 11/16/16.
@@ -12,9 +12,9 @@ import FirebaseDatabase
 import FirebaseAuth
 import GeoFire
 
-class FirebaseInteractor {
+class FirebaseAPI {
     
-    static let shared = FirebaseInteractor()
+    static let shared = FirebaseAPI()
     private init() {
     
     }
@@ -23,7 +23,7 @@ class FirebaseInteractor {
 }
 
 //MARK: - Auth {
-extension FirebaseInteractor {
+extension FirebaseAPI {
     func authorize() {
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
             if let error = error {
@@ -36,7 +36,7 @@ extension FirebaseInteractor {
 }
 
 //MARK: - Landmark
-extension FirebaseInteractor {
+extension FirebaseAPI {
     
     func serializeAndStoreDataOnFirebase() {
         let landmarksRef = ref.child("landmarks")
@@ -65,11 +65,20 @@ extension FirebaseInteractor {
                 print("Successful storage at \(reference)")
             }
         }
+        
     }
     
+    func clearFirebaseLandmarks(){
+        ref.child("landmarks").removeValue()
+    }
+}
+
+//MARK: - GeoFire
+extension FirebaseAPI {
+
     func geoFireStore(key: String, landmark: Landmark){
         
-        let geoFireRef = FIRDatabase.database().reference().child("geofire")
+        let geoFireRef = FIRDatabase.database().reference().child("geofire").child("landmarks")
         guard let geoFire = GeoFire(firebaseRef: geoFireRef) else { print("GeoFire failure"); return }
         
         guard
@@ -88,7 +97,25 @@ extension FirebaseInteractor {
             }
         }
         
-        
+    }
+    
+    func clearGeoFireLandmarks() {
+        ref.child("geofire").child("landmarks").removeValue()
+    }
+    
+}
+
+//MARK: - Database Clear
+extension FirebaseAPI {
+    
+    func clearDatabase() {
+        clearGeoFireLandmarks()
+        clearFirebaseLandmarks()
+    }
+    
+    func deleteLandmark(landmarkKey: String) {
+        ref.child("geofire").child("landmarks").child(landmarkKey).removeValue()
+        ref.child("landmarks").child(landmarkKey)
     }
     
 }
