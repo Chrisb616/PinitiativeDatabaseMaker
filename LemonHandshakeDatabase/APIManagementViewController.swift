@@ -105,7 +105,7 @@ class APIManagementViewController: UIViewController {
         pullAPILabel.text = "Step 1: Pull locations from Pluto"
         pullAPILabel.numberOfLines = 3
         pullAPILabel.textAlignment = .center
-        pullAPILabel.font = UIFont(name: "Avenir", size: 12)
+        pullAPILabel.font = UIFont(name: "Avenir", size: 30)
         
         fixMarkButton.layer.cornerRadius = 15
         fixMarkButton.addTarget(self, action: #selector(tapFixMarkButton), for: .touchUpInside)
@@ -113,21 +113,21 @@ class APIManagementViewController: UIViewController {
         fixMarkLabel.text = "Step 2: View, edit, or add data"
         fixMarkLabel.numberOfLines = 3
         fixMarkLabel.textAlignment = .center
-        fixMarkLabel.font = UIFont(name: "Avenir", size: 12)
+        fixMarkLabel.font = UIFont(name: "Avenir", size: 30)
         
         firPushButton.layer.cornerRadius = 15
         firPushButton.addTarget(self, action: #selector(tapFirPushButton), for: .touchUpInside)
         
-        firPushLabel.text = "Step 3: Push the data to Firebase (will clear previous data)"
+        firPushLabel.text = "Step 3: Push the data to Firebase (WARNING: will clear previous data)"
         firPushLabel.numberOfLines = 3
         firPushLabel.textAlignment = .center
-        firPushLabel.font = UIFont(name: "Avenir", size: 12)
+        firPushLabel.font = UIFont(name: "Avenir", size: 30)
         
         backButton.layer.cornerRadius = 10
         backButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
         
         backLabel.text = "Back"
-        backLabel.font = UIFont.init(name: "Avenir", size: 20)
+        backLabel.font = UIFont.init(name: "Avenir", size: 30)
         backLabel.textAlignment = .center
         
     }
@@ -138,17 +138,6 @@ class APIManagementViewController: UIViewController {
         store.getLandmarksFromAPI { (landmarks) in
             print(landmarks.count)
         }
-    }
-    
-    func tapGeoCodeButton() {
-//        var landmarks = [Landmark]()
-//        
-//        for landmark in store.landmarks {
-//            if landmark.latitude == nil || landmark.longitude == nil {
-//                landmarks.append(landmark)
-//            }
-//        }
-        //LocationManager.setCoordinates(landmarks: landmarks)
     }
     func tapFixMarkButton() {
         let dest = LandmarkListViewController()

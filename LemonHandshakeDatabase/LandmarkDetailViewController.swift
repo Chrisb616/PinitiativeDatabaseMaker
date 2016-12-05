@@ -200,6 +200,8 @@ class LandmarkDetailViewController: UIViewController {
             landmark.longitude = prevLongitude
         }
         
+        landmark.edited = true
+        
         dismiss(animated: true)
     }
 

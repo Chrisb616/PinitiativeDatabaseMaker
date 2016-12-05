@@ -89,8 +89,10 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
         filterButton.translatesAutoresizingMaskIntoConstraints = false
         filterButton.topAnchor.constraint(equalTo: filterTextField.topAnchor).isActive = true
         filterButton.bottomAnchor.constraint(equalTo: filterTextField.bottomAnchor).isActive = true
-        filterButton.leadingAnchor.constraint(equalTo: filterTextField.trailingAnchor, constant: 20).isActive = true
-        filterButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+        filterButton.leadingAnchor.constraint(equalTo: filterTextField.trailingAnchor, constant: 10).isActive = true
+        filterButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
+        
+        filterIconImageView.constrainTo(filterButton)
     }
     
     func customizeViews() {
@@ -102,6 +104,12 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
         backLabel.textAlignment = .center
         
         filterTextField.layer.cornerRadius = 10
+        filterButton.layer.cornerRadius = 10
+        
+        filterIconImageView.image = UIImage(named: "filter-icon-0")
+        filterIconImageView.contentMode = .scaleAspectFit
+        
+        filterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
     }
     
     func tapBackButton() {
@@ -131,12 +139,12 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
             cell.backgroundColor = UIColor.themeOrange
         }
         
-        let landmark = landmarks[indexPath.row]
+        let landmark = filteredLandmarks[indexPath.row]
         
         cell.textLabel?.text = landmark.name
         
         if landmark.edited {
-            cell.textLabel?.text = landmark.name + " - Edited"
+            cell.textLabel?.text = landmark.name + " - *EDITED*"
         }
 
         return cell
@@ -151,8 +159,8 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text {
+    func filterButtonTapped() {
+        if let text = filterTextField.text {
             filterTo(text)
             tableView.reloadData()
         }
