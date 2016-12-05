@@ -10,13 +10,14 @@ import Foundation
 
 class Landmark {
     
-    var name: String?
-    var address: String?
-    var latitude: Double?
-    var longitude: Double?
-    var agency: String?
-    var useDescription: String?
-    var borough: String?
+    var name: String
+    var address: String
+    var latitude: Double
+    var longitude: Double
+    var agency: String
+    var useDescription: String
+    var borough: String
+    var edited: Bool = false
     
     init(dictionary: [[String: Any]]){
             
@@ -32,15 +33,15 @@ class Landmark {
         
             self.latitude = coordinates[1]
         
-        self.name = properties["NAME"] as? String
+        self.name = (properties["NAME"] as! String).processed
         
-        self.address = properties["ADDRESS"] as! String?
+        self.address = (properties["ADDRESS"] as! String).processed
         
-        self.agency = properties["AGENCY"] as! String?
+        self.agency = (properties["AGENCY"] as! String).processed
         
-        self.useDescription = properties["USEDEC"] as! String?
+        self.useDescription = (properties["USEDEC"] as! String).processed
         
-        self.borough = properties["BORO"] as! String?
+        self.borough = (properties["BORO"] as! String).processed
         
 
     }

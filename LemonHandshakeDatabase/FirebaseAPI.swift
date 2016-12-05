@@ -81,11 +81,9 @@ extension FirebaseAPI {
         let geoFireRef = FIRDatabase.database().reference().child("geofire").child("landmarks")
         guard let geoFire = GeoFire(firebaseRef: geoFireRef) else { print("GeoFire failure"); return }
         
-        guard
-            let latitude = landmark.latitude,
-            let longitude = landmark.longitude
+        let latitude = landmark.latitude
+        let longitude = landmark.longitude
         
-            else { print("FAILURE: Cannot convert coordinate info from \(landmark.name) into doubles"); return }
         
         let location = CLLocation(latitude: latitude, longitude: longitude)
         

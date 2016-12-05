@@ -8,15 +8,20 @@
 
 import UIKit
 
-class LandmarkListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LandmarkListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     let store = DataStore.sharedInstance
     
+    var filteredLandmarks = [Landmark]()
     var landmarks = [Landmark]()
     var tableView = UITableView()
     
     var backButton = UIButton()
     var backLabel = UILabel()
+    
+    var filterTextField = UITextField()
+    var filterButton = UIButton()
+    var filterIconImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +30,26 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
         constrainViews()
         customizeViews()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     func initializeViews() {
         
         landmarks = store.landmarks
+        filteredLandmarks = landmarks
         
-        self.view.addSubviews(tableView, backButton)
+        self.view.addSubviews(tableView, backButton, filterTextField, filterButton)
         backButton.addSubview(backLabel)
+        filterButton.addSubview(filterIconImageView)
         
         tableView.register(LandmarkTableViewCell.self, forCellReuseIdentifier: "landmarkCell")
         tableView.delegate = self
         tableView.dataSource = self
         
+        filterTextField.delegate = self
     }
     
     func colorizeViews(){
@@ -44,6 +57,8 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
         tableView.backgroundColor = UIColor.black
         backButton.backgroundColor = UIColor.themeOrange
         backLabel.textColor = UIColor.black
+        filterTextField.backgroundColor = UIColor.white
+        filterButton.backgroundColor = UIColor.themeOrange
     }
     
     func constrainViews() {
@@ -63,6 +78,19 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
         backButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.05).isActive = true
         
         backLabel.constrainTo(backButton)
+        
+        filterTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        filterTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        filterTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
+        filterTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        filterTextField.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -30).isActive = true
+        
+        filterButton.translatesAutoresizingMaskIntoConstraints = false
+        filterButton.topAnchor.constraint(equalTo: filterTextField.topAnchor).isActive = true
+        filterButton.bottomAnchor.constraint(equalTo: filterTextField.bottomAnchor).isActive = true
+        filterButton.leadingAnchor.constraint(equalTo: filterTextField.trailingAnchor, constant: 20).isActive = true
+        filterButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
     }
     
     func customizeViews() {
@@ -72,6 +100,8 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
         backLabel.text = "Back"
         backLabel.font = UIFont.init(name: "Avenir", size: 20)
         backLabel.textAlignment = .center
+        
+        filterTextField.layer.cornerRadius = 10
     }
     
     func tapBackButton() {
@@ -88,7 +118,7 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return landmarks.count
+        return filteredLandmarks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,20 +131,49 @@ class LandmarkListViewController: UIViewController, UITableViewDelegate, UITable
             cell.backgroundColor = UIColor.themeOrange
         }
         
-        cell.textLabel?.text = landmarks[indexPath.row].name
+        let landmark = landmarks[indexPath.row]
+        
+        cell.textLabel?.text = landmark.name
+        
+        if landmark.edited {
+            cell.textLabel?.text = landmark.name + " - Edited"
+        }
 
         return cell
     }
-    
-    
-    
-    
-    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dest = LandmarkDetailViewController()
         
-        dest.landmark = landmarks[indexPath.row]
+        dest.landmark = filteredLandmarks[indexPath.row]
+        
+        present(dest, animated: true)
+    }
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            filterTo(text)
+            tableView.reloadData()
+        }
+    }
+    
+    func filterTo(_ string: String) {
+        filteredLandmarks.removeAll()
+        
+        for landmark in landmarks {
+            if landmark.name.contains(string) {
+                filteredLandmarks.append(landmark)
+            } else if landmark.agency.contains(string) {
+                filteredLandmarks.append(landmark)
+            } else if landmark.borough.contains(string) {
+                filteredLandmarks.append(landmark)
+            } else if landmark.address.contains(string) {
+                filteredLandmarks.append(landmark)
+            } else if landmark.useDescription.contains(string) {
+                filteredLandmarks.append(landmark)
+            }
+        }
     }
 
 }
