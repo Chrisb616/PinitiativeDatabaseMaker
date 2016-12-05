@@ -56,20 +56,20 @@ class FirebaseManagementViewController: UIViewController {
         
         pullFirButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height * 0.15).isActive = true
         pullFirButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width * 0.1).isActive = true
-        pullFirButton.trailingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: self.view.frame.width * -0.05).isActive = true
+        pullFirButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: self.view.frame.width * -0.1).isActive = true
         pullFirButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
         
         pullFirLabel.constrainTo(pullFirButton)
         
         fixMarkButton.topAnchor.constraint(equalTo: pullFirButton.bottomAnchor, constant: self.view.frame.height * 0.05).isActive = true
         fixMarkButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.view.frame.width * 0.1).isActive = true
-        fixMarkButton.trailingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: self.view.frame.width * -0.05).isActive = true
+        fixMarkButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: self.view.frame.width * -0.1).isActive = true
         fixMarkButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
         
         fixMarkLabel.constrainTo(fixMarkButton)
         
         firPushButton.topAnchor.constraint(equalTo: fixMarkButton.bottomAnchor, constant: self.view.frame.height * 0.05).isActive = true
-        firPushButton.leadingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: self.self.view.frame.width * 0.05).isActive = true
+        firPushButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: self.self.view.frame.width * 0.1).isActive = true
         firPushButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: self.view.frame.width * -0.1).isActive = true
         firPushButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
         
@@ -100,7 +100,7 @@ class FirebaseManagementViewController: UIViewController {
         pullFirButton.layer.cornerRadius = 15
         pullFirButton.addTarget(self, action: #selector(tappullFirButton), for: .touchUpInside)
         
-        pullFirLabel.text = "Step 1: Pull landmarks from Firebase"
+        pullFirLabel.text = "Step 1: Pull landmarks from Firebase (WARNING: Will clear local landmark data)"
         pullFirLabel.numberOfLines = 3
         pullFirLabel.textAlignment = .center
         pullFirLabel.font = UIFont(name: "Avenir", size: 20)
@@ -108,7 +108,7 @@ class FirebaseManagementViewController: UIViewController {
         fixMarkButton.layer.cornerRadius = 15
         fixMarkButton.addTarget(self, action: #selector(tapFixMarkButton), for: .touchUpInside)
         
-        fixMarkLabel.text = "Step 3: View list of landmarks and manually edit"
+        fixMarkLabel.text = "Step 2: View list of landmarks and manually edit"
         fixMarkLabel.numberOfLines = 3
         fixMarkLabel.textAlignment = .center
         fixMarkLabel.font = UIFont(name: "Avenir", size: 20)
@@ -116,7 +116,7 @@ class FirebaseManagementViewController: UIViewController {
         firPushButton.layer.cornerRadius = 15
         firPushButton.addTarget(self, action: #selector(tapFirPushButton), for: .touchUpInside)
         
-        firPushLabel.text = "Step 4: Push the data back to Firebase"
+        firPushLabel.text = "Step 3: Push the data back to Firebase (WARNING: Will clear previous landmark data from database)"
         firPushLabel.numberOfLines = 3
         firPushLabel.textAlignment = .center
         firPushLabel.font = UIFont(name: "Avenir", size: 20)
@@ -132,7 +132,8 @@ class FirebaseManagementViewController: UIViewController {
     
     
     func tappullFirButton() {
-        
+        store.landmarks.removeAll()
+        FirebaseAPI.pullAllLocations()
     }
     
     func tapFixMarkButton() {
@@ -142,6 +143,7 @@ class FirebaseManagementViewController: UIViewController {
         
     }
     func tapFirPushButton() {
+        FirebaseAPI.serializeAndStoreDataOnFirebase()
         
     }
     func tapBackButton() {

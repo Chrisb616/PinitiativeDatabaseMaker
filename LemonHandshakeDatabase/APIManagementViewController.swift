@@ -146,7 +146,7 @@ class APIManagementViewController: UIViewController {
         
     }
     func tapFirPushButton() {
-        FirebaseAPI.shared.serializeAndStoreDataOnFirebase()
+        FirebaseAPI.serializeAndStoreDataOnFirebase()
     }
     
     func tapBackButton() {

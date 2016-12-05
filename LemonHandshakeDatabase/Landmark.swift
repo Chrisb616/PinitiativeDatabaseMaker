@@ -46,6 +46,16 @@ class Landmark {
 
     }
     
+    init(fireBaseDictionary dictionary: [String:Any]) {
+        self.name = dictionary["name"] as? String ?? ""
+        self.address = dictionary["address"] as? String ?? ""
+        self.latitude = dictionary["latitude"] as? Double ?? 0
+        self.longitude = dictionary["longitude"] as? Double ?? 0
+        self.agency = dictionary["agency"] as? String ?? ""
+        self.borough = dictionary["borough"] as? String ?? ""
+        self.useDescription = dictionary["useDescription"] as? String ?? ""
+    }
+    
 }
 extension Landmark {
     var serialized: [String:Any?]{

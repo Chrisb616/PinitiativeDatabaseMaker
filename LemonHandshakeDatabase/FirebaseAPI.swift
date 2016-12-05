@@ -14,17 +14,16 @@ import GeoFire
 
 class FirebaseAPI {
     
-    static let shared = FirebaseAPI()
     private init() {
     
     }
     
-    let ref = FIRDatabase.database().reference()
+    static let ref = FIRDatabase.database().reference()
 }
 
 //MARK: - Auth {
 extension FirebaseAPI {
-    func authorize() {
+    static func authorize() {
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -38,17 +37,17 @@ extension FirebaseAPI {
 //MARK: - Landmark
 extension FirebaseAPI {
     
-    func serializeAndStoreDataOnFirebase() {
-        let landmarksRef = ref.child("landmarks")
+    static func serializeAndStoreDataOnFirebase() {
+        let landmarksRef = FirebaseAPI.ref.child("landmarks")
         let data = createData(with: DataStore.sharedInstance.landmarks)
         storeOnFirebase(data: data, in: landmarksRef)
     }
     
-    func createData(with landmarks: [Landmark]) -> [String:Any] {
+    static func createData(with landmarks: [Landmark]) -> [String:Any] {
         var data = [String:Any]()
         
         for landmark in landmarks {
-            let key = ref.childByAutoId().key
+            let key = FirebaseAPI.ref.childByAutoId().key
             data[key] = landmark.serialized
             geoFireStore(key: key, landmark: landmark)
             print("\(landmark.name) serialized")
@@ -56,7 +55,7 @@ extension FirebaseAPI {
         return data
     }
     
-    func storeOnFirebase(data: [String:Any], in reference: FIRDatabaseReference) {
+    static func storeOnFirebase(data: [String:Any], in reference: FIRDatabaseReference) {
         
         reference.updateChildValues(data) { (error, ref) in
             if let error = error {
@@ -68,26 +67,28 @@ extension FirebaseAPI {
         
     }
     
-    func pullAllLocations() {
-        ref.child("landmarks").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionary = snapshot.value as? [String:Any] else { return }
+    static func pullAllLocations() {
+        FirebaseAPI.ref.child("landmarks").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionary = snapshot.value as? [String:[String:Any]] else { return }
             
+            for item in dictionary {
+                let landmark = Landmark(fireBaseDictionary: item.value)
+                DataStore.sharedInstance.landmarks.append(landmark)
+            }
         })
-        
-        
     }
     
-    func clearFirebaseLandmarks(){
-        ref.child("landmarks").removeValue()
+    static func clearFirebaseLandmarks(){
+        FirebaseAPI.ref.child("landmarks").removeValue()
     }
 }
 
 //MARK: - GeoFire
 extension FirebaseAPI {
 
-    func geoFireStore(key: String, landmark: Landmark){
+    static func geoFireStore(key: String, landmark: Landmark){
         
-        let geoFireRef = FIRDatabase.database().reference().child("geofire").child("landmarks")
+        let geoFireRef = FirebaseAPI.ref.child("geofire").child("landmarks")
         guard let geoFire = GeoFire(firebaseRef: geoFireRef) else { print("GeoFire failure"); return }
         
         let latitude = landmark.latitude
@@ -106,8 +107,8 @@ extension FirebaseAPI {
         
     }
     
-    func clearGeoFireLandmarks() {
-        ref.child("geofire").child("landmarks").removeValue()
+    static func clearGeoFireLandmarks() {
+        FirebaseAPI.ref.child("geofire").child("landmarks").removeValue()
     }
     
 }
@@ -115,14 +116,14 @@ extension FirebaseAPI {
 //MARK: - Database Clear
 extension FirebaseAPI {
     
-    func clearDatabase() {
-        clearGeoFireLandmarks()
-        clearFirebaseLandmarks()
+    static func clearDatabase() {
+        FirebaseAPI.clearGeoFireLandmarks()
+        FirebaseAPI.clearFirebaseLandmarks()
     }
     
-    func deleteLandmark(landmarkKey: String) {
-        ref.child("geofire").child("landmarks").child(landmarkKey).removeValue()
-        ref.child("landmarks").child(landmarkKey)
+    static func deleteLandmark(landmarkKey: String) {
+        FirebaseAPI.ref.child("geofire").child("landmarks").child(landmarkKey).removeValue()
+        FirebaseAPI.ref.child("landmarks").child(landmarkKey)
     }
     
 }
