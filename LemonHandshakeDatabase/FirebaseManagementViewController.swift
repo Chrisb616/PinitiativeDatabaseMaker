@@ -103,7 +103,7 @@ class FirebaseManagementViewController: UIViewController {
         pullFirLabel.text = "Step 1: Pull landmarks from Firebase"
         pullFirLabel.numberOfLines = 3
         pullFirLabel.textAlignment = .center
-        pullFirLabel.font = UIFont(name: "Avenir", size: 12)
+        pullFirLabel.font = UIFont(name: "Avenir", size: 20)
         
         fixMarkButton.layer.cornerRadius = 15
         fixMarkButton.addTarget(self, action: #selector(tapFixMarkButton), for: .touchUpInside)
@@ -111,7 +111,7 @@ class FirebaseManagementViewController: UIViewController {
         fixMarkLabel.text = "Step 3: View list of landmarks and manually edit"
         fixMarkLabel.numberOfLines = 3
         fixMarkLabel.textAlignment = .center
-        fixMarkLabel.font = UIFont(name: "Avenir", size: 12)
+        fixMarkLabel.font = UIFont(name: "Avenir", size: 20)
         
         firPushButton.layer.cornerRadius = 15
         firPushButton.addTarget(self, action: #selector(tapFirPushButton), for: .touchUpInside)
@@ -119,7 +119,7 @@ class FirebaseManagementViewController: UIViewController {
         firPushLabel.text = "Step 4: Push the data back to Firebase"
         firPushLabel.numberOfLines = 3
         firPushLabel.textAlignment = .center
-        firPushLabel.font = UIFont(name: "Avenir", size: 12)
+        firPushLabel.font = UIFont(name: "Avenir", size: 20)
         
         backButton.layer.cornerRadius = 10
         backButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
@@ -132,6 +132,7 @@ class FirebaseManagementViewController: UIViewController {
     
     
     func tappullFirButton() {
+        
     }
     
     func tapFixMarkButton() {

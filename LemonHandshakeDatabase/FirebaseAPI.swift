@@ -68,6 +68,15 @@ extension FirebaseAPI {
         
     }
     
+    func pullAllLocations() {
+        ref.child("landmarks").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionary = snapshot.value as? [String:Any] else { return }
+            
+        })
+        
+        
+    }
+    
     func clearFirebaseLandmarks(){
         ref.child("landmarks").removeValue()
     }
